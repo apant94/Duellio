@@ -1,0 +1,8 @@
+@import url(./vendor/style.css);
+
+body {
+  margin: 0;
+  font-family: 'San Francisco Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

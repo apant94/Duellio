@@ -1,0 +1,139 @@
+.clock {
+  display: flex;
+  align-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 800px;
+  height: 667px;
+  background: #F5F5F6;
+  box-shadow: 0px 4px 20px rgba(19, 50, 78, 0.07);
+  border-radius: 40px;
+}
+
+.clock__input {
+  margin: 60px 0 0 100px;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 282px;
+  height: 34px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28.8px;
+  line-height: 34px;
+  color: #2B2D33;
+}
+
+.clock__input:last-of-type {
+  margin: 60px 100px 0 36px;
+}
+
+.clock__dial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14.4px 36px 0 100px;
+  width: 282px;
+  height: 240px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(19, 50, 78, 0.07);
+  border-radius: 36px;
+}
+
+.clock__dial:last-of-type {
+  margin: 14.4px 100px 0 0;
+}
+
+.clock__dia_text {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 84px;
+  color: #2B2D33;
+}
+
+.clock__button-main {
+  margin: 31.2px 100px 0;
+  padding: 0;
+  border: 0;
+  width: 600px;
+  height: 60px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #00B7CB;
+}
+
+.clock__button-average {
+  margin: 31.2px 20px 0 0;
+  padding: 0;
+  border: 0;
+  width: 186.67px;
+  height: 60px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #2B2D33;
+}
+
+.clock__button-average_active {
+  background: #D7D9DF;
+  color: #FFFFFF;
+}
+
+.clock__button-average_position_left {
+  margin-left: 100px;
+}
+
+.clock__button-average_position_right {
+  margin-right: 100px;
+}
+
+.clock__button-mini {
+  margin: 31.2px 20px 0 0;
+  padding: 0;
+  border: 0;
+  width: 135px;
+  height: 60px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.clock__button-mini_position_left {
+  margin-left: 100px;
+}
+
+.clock__button-mini_position_right {
+  margin-right: 100px;
+}
+
+.clock__button-mini_image_pause {
+  background-image: url('../../images/pause.svg');
+}
+
+.clock__button-mini_image_repeat {
+  background-image: url('../../images/repeat.svg');
+}
+
+.clock__button-mini_image_settings {
+  background-image: url('../../images/settings.svg');
+}
+
+.clock__button-mini_image_dark-mode {
+  background-image: url('../../images/material-symbols_dark-mode-outline-rounded.svg');
+}
