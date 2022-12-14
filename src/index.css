@@ -1,8 +1,15 @@
-@import url(./vendor/style.css);
+@import url(./vendor/fonts/fonts.css);
 
 body {
   margin: 0;
   font-family: 'San Francisco Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+  background: #F5F5F6;
+  padding-bottom: 100px;
 }

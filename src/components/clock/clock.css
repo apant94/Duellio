@@ -19,10 +19,15 @@
   width: 282px;
   height: 34px;
   text-align: center;
+  font-family: 'San Francisco(SF UI)';
   font-style: normal;
   font-weight: 400;
   font-size: 28.8px;
   line-height: 34px;
+  color: #2B2D33;
+}
+
+.clock__input::placeholder {
   color: #2B2D33;
 }
 
@@ -65,6 +70,7 @@
   background: #FFFFFF;
   border-radius: 28px;
   cursor: pointer;
+  font-family: 'San Francisco(SF UI)';
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -72,7 +78,12 @@
   color: #00B7CB;
 }
 
-.clock__button-average {
+.clock__button-main_active {
+  background: #00B7CB;
+  color: #FFFFFF;
+}
+
+/*.clock__button-average {
   margin: 31.2px 20px 0 0;
   padding: 0;
   border: 0;
@@ -99,7 +110,7 @@
 
 .clock__button-average_position_right {
   margin-right: 100px;
-}
+}*/
 
 .clock__button-mini {
   margin: 31.2px 20px 0 0;
@@ -114,6 +125,11 @@
   background-repeat: no-repeat;
 }
 
+.clock__button-mini_active {
+  background: #D7D9DF;
+  color: #FFFFFF;
+}
+
 .clock__button-mini_position_left {
   margin-left: 100px;
 }
@@ -122,7 +138,7 @@
   margin-right: 100px;
 }
 
-.clock__button-mini_image_pause {
+/*.clock__button-mini_image_pause {
   background-image: url('../../images/pause.svg');
 }
 
@@ -132,8 +148,12 @@
 
 .clock__button-mini_image_settings {
   background-image: url('../../images/settings.svg');
-}
+}*/
 
 .clock__button-mini_image_dark-mode {
   background-image: url('../../images/material-symbols_dark-mode-outline-rounded.svg');
+}
+
+.clock__button-mini_image_desktop {
+  background-image: url('../../images/desktop.svg');
 }
