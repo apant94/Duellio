@@ -41,8 +41,8 @@ const Clock = (props) => {
     }
   }
 
-  const startButton = () => {
-    setUseTimer(true);
+  const startButton = (bool) => {
+    setUseTimer(bool);
   }
 
   const switchButton = () => {
@@ -82,7 +82,7 @@ const Clock = (props) => {
           {useTimeRight - Math.trunc(useTimeRight / 60) * 60 <= 9 ? `0${useTimeRight - Math.trunc(useTimeRight / 60) * 60}` : `${useTimeRight - Math.trunc(useTimeRight / 60) * 60}`}
         </p>
       </div>
-      <button className='clock__button-main clock__button-main_active' onClick={startButton}>start</button>
+      <button className='clock__button-main clock__button-main_active' onClick={() => startButton(!useTimer)}>{useTimer ? 'pause' : 'start'}</button>
       <button className='clock__button-main' onClick={switchButton}>switch</button>
       <button className={useChange === 1 ? 'clock__button-mini clock__button-mini_active clock__button-mini_position_left' : 'clock__button-mini clock__button-mini_position_left'} onClick={() => changeButtonTime(1)}>1 min</button>
       <button className={useChange === 4 ? 'clock__button-mini clock__button-mini_active' : 'clock__button-mini'} onClick={() => changeButtonTime(4)}>4 min</button>
