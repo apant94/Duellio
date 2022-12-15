@@ -11,6 +11,10 @@
   border-radius: 40px;
 }
 
+.clock_dark {
+  background: #18191A;
+}
+
 .clock__input {
   margin: 60px 0 0 100px;
   border: 0;
@@ -27,8 +31,16 @@
   color: #2B2D33;
 }
 
+.clock__input_dark {
+  color: #FFFFFF;
+}
+
 .clock__input::placeholder {
   color: #2B2D33;
+}
+
+.clock__input_dark::placeholder {
+  color: #FFFFFF;
 }
 
 .clock__input:last-of-type {
@@ -83,35 +95,6 @@
   color: #FFFFFF;
 }
 
-/*.clock__button-average {
-  margin: 31.2px 20px 0 0;
-  padding: 0;
-  border: 0;
-  width: 186.67px;
-  height: 60px;
-  background: #FFFFFF;
-  border-radius: 28px;
-  cursor: pointer;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
-  color: #2B2D33;
-}
-
-.clock__button-average_active {
-  background: #D7D9DF;
-  color: #FFFFFF;
-}
-
-.clock__button-average_position_left {
-  margin-left: 100px;
-}
-
-.clock__button-average_position_right {
-  margin-right: 100px;
-}*/
-
 .clock__button-mini {
   margin: 31.2px 20px 0 0;
   padding: 0;
@@ -137,18 +120,6 @@
 .clock__button-mini_position_right {
   margin-right: 100px;
 }
-
-/*.clock__button-mini_image_pause {
-  background-image: url('../../images/pause.svg');
-}
-
-.clock__button-mini_image_repeat {
-  background-image: url('../../images/repeat.svg');
-}
-
-.clock__button-mini_image_settings {
-  background-image: url('../../images/settings.svg');
-}*/
 
 .clock__button-mini_image_dark-mode {
   background-image: url('../../images/material-symbols_dark-mode-outline-rounded.svg');

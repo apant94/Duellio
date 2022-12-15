@@ -12,7 +12,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={useTheme === 'day' ? 'App' : 'App App_dark'}>
       <ThemeContext.Provider value={useTheme}>
         <Header />
         <Clock changeTheme={changeTheme}/>
