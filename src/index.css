@@ -16,3 +16,10 @@ body {
 .App_dark {
   background: #2B2D33;
 }
+
+.App_new-year {
+  /*background-image: url('https://placepic.ru/wp-content/uploads/2018/11/97973bb5bf0097378fb0860159ddbb0d.jpg');*/
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}

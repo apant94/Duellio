@@ -1,4 +1,5 @@
 .clock {
+  position: relative; /* для инпута адреса изображения*/
   display: flex;
   align-content: flex-start;
   flex-direction: row;
@@ -6,13 +7,13 @@
   margin: 0 auto;
   width: 800px;
   height: 667px;
-  background: #F5F5F6;
+  background: #F5F5F680;
   box-shadow: 0px 4px 20px rgba(19, 50, 78, 0.07);
   border-radius: 40px;
 }
 
 .clock_dark {
-  background: #18191A;
+  background: #18191A80;
 }
 
 .clock__input {
@@ -47,6 +48,21 @@
   margin: 60px 100px 0 36px;
 }
 
+.clock__input_new-year {
+  border: 3px solid blue;
+  text-align: start;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  background-color: rgba(255, 255, 255, .7);
+}
+
+.clock__input_new-year:focus-visible { /* не работает */
+  border: 3px solid blue;
+}
+
 .clock__dial {
   display: flex;
   justify-content: center;
@@ -57,10 +73,23 @@
   background: #FFFFFF;
   box-shadow: 0px 4px 20px rgba(19, 50, 78, 0.07);
   border-radius: 36px;
+  cursor: pointer;
 }
 
 .clock__dial:last-of-type {
   margin: 14.4px 100px 0 0;
+}
+
+.clock__dial_active {
+  border: 5px solid #00B7CB;
+  width: 272px;
+  height: 235px;
+}
+
+.clock__dial-animation {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-name: blinking;
 }
 
 .clock__dia_text {
@@ -127,4 +156,22 @@
 
 .clock__button-mini_image_desktop {
   background-image: url('../../images/desktop.svg');
+}
+
+@keyframes blinking {
+  0% {
+    border: 5px solid #00B7CB;
+  }
+  25% {
+    border: 5px solid red;
+  }
+  50% {
+    border: 5px solid #00B7CB;
+  }
+  75% {
+    border: 5px solid red;
+  }
+  100% {
+    border: 5px solid #00B7CB;
+  }
 }
