@@ -142,7 +142,7 @@
   font-style: normal;
 }
 
-@font-face { /* header */
+@font-face { /* header */ /* 700 */
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Bold.eot');
   src: local('SF UI Display Bold'), local('SFUIDisplay-Bold'),
@@ -162,7 +162,7 @@
       url('SFUIText-Regular.woff2') format('woff2'),
       url('SFUIText-Regular.woff') format('woff'),
       url('SFUIText-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: normal; /* 400 */
   font-style: normal;
 }
 

@@ -5,36 +5,45 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 60px 100px;
+  padding: 0 100px;
   width: 800px;
   height: 693px;
-  background: #F5F5F680;
+  background: #F5F5F6;
   box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
   border-radius: 40px;
 }
 
 .clock_dark {
-  background: #18191A80;
+  background: #18191A;
+}
+
+.clock__container-date {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 32px;
+  margin-top: 60px;
+  width: 100%;
 }
 
 .clock__input {
   margin: 0;
   border: 0;
-  padding: 0;
+  padding: 12px 20px;
   background-color: transparent;
-  width: 142px;
-  height: 57px;
+  min-width: 102px;
+  max-width: 100%;
   text-align: center;
-  font-family: 'San Francisco(SF UI)';
+  font-family: 'SF UI Text';
   font-style: normal;
   font-weight: 400;
-  font-size: 28.8px;
-  line-height: 34px;
+  font-size: 28px;
+  line-height: 33px;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
   color: #2B2D33;
 }
 
 .clock__input_dark {
-  color: #FFFFFF;
+  color: #FFF;
 }
 
 .clock__input::placeholder {
@@ -42,11 +51,7 @@
 }
 
 .clock__input_dark::placeholder {
-  color: #FFFFFF;
-}
-
-.clock__input:last-of-type {
-  margin: 60px 100px 0 36px;
+  color: #FFF;
 }
 
 .clock__input_new-year {
@@ -60,31 +65,37 @@
   background-color: rgba(255, 255, 255, .7);
 }
 
-.clock__input_new-year:focus-visible { /* не работает */
-  border: 3px solid blue;
-}
-
 .clock__dial {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 14.4px 36px 0 100px;
-  width: 282px;
+  width: 100%;
   height: 240px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 20px rgba(19, 50, 78, 0.07);
+  background: #FFF;
   border-radius: 36px;
   cursor: pointer;
 }
 
-.clock__dial:last-of-type {
-  margin: 14.4px 100px 0 0;
+.clock__dial_dark {
+  background: #2B2D33;
 }
 
 .clock__dial_active {
-  border: 5px solid #00B7CB;
-  width: 272px;
-  height: 235px;
+  border: 3px solid #22BACB;
+  width: calc(100% - 6px);
+  height: 234px;
+}
+
+.clock__dial_active_dark { /* двойной модификатор */
+  border: 3px solid #99E2EA;
+}
+
+.clock__dial_status_work {
+  background: #22BACB;
+}
+
+.clock__dial_status_work_dark {
+  background: #99E2EA;
 }
 
 .clock__dial-animation {
@@ -93,70 +104,106 @@
   animation-name: blinking;
 }
 
-.clock__dia_text {
+.clock__dia-text {
   margin: 0;
   padding: 0;
+  font-family: 'SF UI Display';
   font-style: normal;
   font-weight: 800;
   font-size: 70px;
   line-height: 84px;
+  font-feature-settings: 'tnum' on, 'lnum' on, 'ss03' on, 'cv02' on, 'ss02' on, 'liga' off;
   color: #2B2D33;
 }
 
+.clock__dia-text_dark {
+  color: #FFF;
+}
+
+.clock__dia-text_status_work {
+  color: #FFF;
+}
+
+.clock__dia-text_status_work_dark {
+  color: #2B2D33;
+}
+
+.clock__container-button {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
 .clock__button-main {
-  margin: 31.2px 100px 0;
+  margin: 0;
+  grid-column-start: 1;
+  grid-column-end: 5;
   padding: 0;
   border: 0;
-  width: 600px;
+  width: 100%;
   height: 60px;
-  background: #FFFFFF;
+  background: #FFF;
   border-radius: 28px;
   cursor: pointer;
-  font-family: 'San Francisco(SF UI)';
+  font-family: 'SF UI Text';
   font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 36px;
-  color: #00B7CB;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33px;
+  color: #22BACB;
+}
+
+.clock__button-main_dark {
+  background: #2B2D33;
+  color: #FFF;
 }
 
 .clock__button-main_active {
-  background: #00B7CB;
-  color: #FFFFFF;
+  background: #22BACB;
+  color: #FFF;
+}
+
+.clock__button-main_active_dark {
+  background: #99E2EA;
+  color: #2B2D33;
 }
 
 .clock__button-mini {
-  margin: 31.2px 20px 0 0;
+  margin: 0;
   padding: 0;
   border: 0;
-  width: 135px;
+  width: 100%;
   height: 60px;
-  background: #FFFFFF;
+  font-family: 'SF UI Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  color: #2B2D33;
   border-radius: 28px;
   cursor: pointer;
+  background: #FFF;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.clock__button-mini_active {
-  background: #D7D9DF;
-  color: #FFFFFF;
+.clock__button-mini_dark {
+  background: #2B2D33;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFF;
 }
 
-.clock__button-mini_position_left {
-  margin-left: 100px;
+.clock__button-mini_image_moon {
+  background-image: url('../../images/moon.svg');
 }
 
-.clock__button-mini_position_right {
-  margin-right: 100px;
-}
-
-.clock__button-mini_image_dark-mode {
-  background-image: url('../../images/material-symbols_dark-mode-outline-rounded.svg');
-}
-
-.clock__button-mini_image_desktop {
-  background-image: url('../../images/desktop.svg');
+.clock__button-mini_image_sun {
+  background-image: url('../../images/sun.svg');
 }
 
 @keyframes blinking {
