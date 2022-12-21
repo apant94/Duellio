@@ -9,38 +9,54 @@ const Clock = (props) => {
   const [useTimeLeft, setUseTimeLeft] = useState(240); // state значения
   const [useTimeRight, setUseTimeRight] = useState(240);
 
+  const [useTimeLeftCount, setUseTimeLeftCount] = useState({'minutes': '4', 'seconds': '00'}); // state посчитанного значения
+  const [useTimeRightCount, setUseTimeRightCount] = useState({'minutes': '4', 'seconds': '00'});
+
   const [useTimerLeftActive, setUseTimerLeftActive] = useState(true); // state активности циферблата
   const [useTimerRightActive, setUseTimerRightActive] = useState(false);
 
   const [useTimer, setUseTimer] = useState(false); // state ативности часов
 
-  const [useChange, setUseChange] = useState(4);
-
-  const inputRef = useRef();
-
-
   useEffect(() => {
-    if (useTimer === true && useTimeLeft > 0 && useTimeRight > 0) {
+    if (useTimer === true && useTimeLeft >= 0 && useTimeRight >= 0) {
       if (useTimerLeftActive) {
-        const interval = setInterval(() => setUseTimeLeft(useTimeLeft => useTimeLeft - 1), 1000);
+        const interval = setInterval(() => setUseTimeLeftCount(() => {
+          setUseTimeLeft(useTimeLeft - 1);
+          return countClock(useTimeLeft)}), 1000);
         return () => clearInterval(interval);
       }
       else if (useTimerRightActive) {
-        const interval = setInterval(() => setUseTimeRight(useTimeRight => useTimeRight - 1), 1000);
+        const interval = setInterval(() => setUseTimeRightCount(() => {
+          setUseTimeRight(useTimeRight - 1);
+          return countClock(useTimeRight)}), 1000);
         return () => clearInterval(interval);
       }
     }
   }, [useTimer, useTimeLeft, useTimeRight, useTimerLeftActive, useTimerRightActive]);
 
+  const countClock = (time) => {
+    let minutes = 0;
+    let seconds = 0;
+    minutes = Math.trunc(time / 60);
+    seconds = time - Math.trunc(time / 60) * 60;
+    if(String(seconds).length !== 2) {
+      seconds = '0'+ seconds;
+    }
+    return {'minutes': minutes, 'seconds': seconds};
+  }
+
   const changeButtonTime = (change) => {
-    setUseChange(change);
     if (change === 4) {
       setUseTimeLeft(240);
       setUseTimeRight(240);
+      setUseTimeLeftCount(countClock(240));
+      setUseTimeRightCount(countClock(240));
     }
     else {
       setUseTimeLeft(60);
       setUseTimeRight(60);
+      setUseTimeLeftCount(countClock(60));
+      setUseTimeRightCount(countClock(60));
     }
   }
 
@@ -49,6 +65,7 @@ const Clock = (props) => {
   }
 
   const switchButton = () => {
+    setUseTimer(false);
     if (useTimerLeftActive) {
       setUseTimerLeftActive(false);
       setUseTimerRightActive(true);
@@ -68,8 +85,14 @@ const Clock = (props) => {
     }
   }
 
+  const [useActiveStyle, setUseActiveStyle] = useState(false);
+
+  const changeActiveStyle = (state) => {
+    setUseActiveStyle(state);
+  }
+/**clock__end-animation */
   return (
-    <section className={theme === 'day' ? 'clock' : 'clock clock_dark'}>
+    <section className={theme === 'day' ? (useTimeLeft > 5 ? 'clock' : 'clock ') : 'clock clock_dark'}>
       {/*props.newYear && 
         <input placeholder='Введите URL адрес до изображения' className={theme === 'day' ? 'clock__input clock__input_new-year' : 'clock__input clock__input_new-year clock__input_dark'} onKeyDown={(e) =>props.listenButton(e, inputRef)} ref={inputRef}/>
       */}
@@ -77,7 +100,7 @@ const Clock = (props) => {
         <input maxLength='20' placeholder='Player 1' className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'} />
         <input maxLength='20' placeholder='Player 2' className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'} />
         {/*<div className={useTimerLeftActive ? useTimeLeft === 0 ? 'clock__dial clock__dial_active clock__dial-animation' : 'clock__dial clock__dial_active' : 'clock__dial'} onClick={switchButton} style={props.newYear ? { 'background': '#FFFFFF80' } : { 'background': '#FFFFFF' }}> */}
-        <div className={useTimer ?
+        <div className={`${useTimer ?
           (useTimerLeftActive ?
             (theme === 'day' ? 'clock__dial clock__dial_status_work' : 'clock__dial clock__dial_dark clock__dial_status_work clock__dial_status_work_dark')
             :
@@ -87,8 +110,10 @@ const Clock = (props) => {
             (theme === 'day' ? 'clock__dial clock__dial_active' : 'clock__dial clock__dial_dark clock__dial_active clock__dial_active_dark')
             :
             (theme === 'day' ? 'clock__dial' : 'clock__dial clock__dial_dark')
-          )}
-          onClick={switchButton}>
+          )} ${useActiveStyle && 'clock__dial_border-none'}`}
+          onClick={switchButton}
+          onMouseEnter={() => changeActiveStyle(!useActiveStyle)}
+          onMouseLeave={() => changeActiveStyle(!useActiveStyle)}>
           <p className={useTimer ?
             (useTimerLeftActive ?
               (theme === 'day' ? 'clock__dia-text clock__dia-text_status_work' : 'clock__dia-text clock__dia-text_dark clock__dia-text_status_work clock__dia-text_status_work_dark')
@@ -96,11 +121,10 @@ const Clock = (props) => {
               (theme === 'day' ? 'clock__dia-text' : 'clock__dia-text clock__dia-text_dark'))
             :
             (theme === 'day' ? 'clock__dia-text' : 'clock__dia-text clock__dia-text_dark')}>
-            {`${Math.trunc(useTimeLeft / 60)}:`}
-            {useTimeLeft - Math.trunc(useTimeLeft / 60) * 60 <= 9 ? `0${useTimeLeft - Math.trunc(useTimeLeft / 60) * 60}` : `${useTimeLeft - Math.trunc(useTimeLeft / 60) * 60}`}
+            {`${useTimeLeftCount.minutes}:${useTimeLeftCount.seconds}`}
           </p>
         </div>
-        <div className={useTimer ?
+        <div className={`${useTimer ?
           (useTimerRightActive ?
             (theme === 'day' ? 'clock__dial clock__dial_status_work' : 'clock__dial clock__dial_dark clock__dial_status_work clock__dial_status_work_dark')
             :
@@ -110,8 +134,10 @@ const Clock = (props) => {
             (theme === 'day' ? 'clock__dial clock__dial_active' : 'clock__dial clock__dial_dark clock__dial_active clock__dial_active_dark')
             :
             (theme === 'day' ? 'clock__dial' : 'clock__dial clock__dial_dark')
-          )}
-          onClick={switchButton}>
+          )} ${useActiveStyle && 'clock__dial_border-none'}`}
+          onClick={switchButton}
+          onMouseEnter={() => changeActiveStyle(!useActiveStyle)}
+          onMouseLeave={() => changeActiveStyle(!useActiveStyle)}>
           <p className={useTimer ?
             (useTimerRightActive ?
               (theme === 'day' ? 'clock__dia-text clock__dia-text_status_work' : 'clock__dia-text clock__dia-text_dark clock__dia-text_status_work clock__dia-text_status_work_dark')
@@ -119,8 +145,7 @@ const Clock = (props) => {
               (theme === 'day' ? 'clock__dia-text' : 'clock__dia-text clock__dia-text_dark'))
             :
             (theme === 'day' ? 'clock__dia-text' : 'clock__dia-text clock__dia-text_dark')}>
-            {`${Math.trunc(useTimeRight / 60)}:`}
-            {useTimeRight - Math.trunc(useTimeRight / 60) * 60 <= 9 ? `0${useTimeRight - Math.trunc(useTimeRight / 60) * 60}` : `${useTimeRight - Math.trunc(useTimeRight / 60) * 60}`}
+            {`${useTimeRightCount.minutes}:${useTimeRightCount.seconds}`}
           </p>
         </div>
       </div>

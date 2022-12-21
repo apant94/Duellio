@@ -76,8 +76,18 @@
   cursor: pointer;
 }
 
+.clock__dial:hover {
+  background: #F5F5F6;
+  /*border: 3px solid #F5F5F6;*/
+}
+
 .clock__dial_dark {
   background: #2B2D33;
+}
+
+.clock__dial_dark:hover {
+  background: #2B2D33;
+  /*border: 3px solid #2B2D33;*/
 }
 
 .clock__dial_active {
@@ -86,8 +96,18 @@
   height: 234px;
 }
 
+.clock__dial:hover .clock__dial_active {
+  border: 3px solid #F5F5F6;
+}
+
 .clock__dial_active_dark { /* двойной модификатор */
-  border: 3px solid #99E2EA;
+  border: 3px solid #F5F5F6;
+}
+
+.clock__dial_border-none {
+  border: 0;
+  height: 240px;
+  width: 100%;
 }
 
 .clock__dial_status_work {
@@ -116,8 +136,21 @@
   color: #2B2D33;
 }
 
+.clock__dial:hover .clock__dia-text {
+  padding: 20px;
+  background-color: #FFF;
+  border: 1px solid #22BACB;
+  box-shadow: inset 0px 0px 5px rgba(19, 50, 78, 0.5);
+  border-radius: 16px;
+}
+
 .clock__dia-text_dark {
   color: #FFF;
+}
+
+.clock__dial_dark:hover .clock__dia-text_dark {
+  background: #F5F5F6;
+  color: #2B2D33;
 }
 
 .clock__dia-text_status_work {
@@ -156,9 +189,17 @@
   color: #22BACB;
 }
 
+.clock__button-main:hover {
+  box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
+}
+
 .clock__button-main_dark {
   background: #2B2D33;
   color: #FFF;
+}
+
+.clock__button-main_dark:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
 }
 
 .clock__button-main_active {
@@ -191,6 +232,10 @@
   background-repeat: no-repeat;
 }
 
+.clock__button-mini:hover {
+  box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
+}
+
 .clock__button-mini_dark {
   background: #2B2D33;
   background-position: center;
@@ -198,28 +243,58 @@
   color: #FFF;
 }
 
+.clock__button-mini_dark:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
+}
+
 .clock__button-mini_image_moon {
   background-image: url('../../images/moon.svg');
+}
+
+.clock__button-mini_image_moon:hover {
+  box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
 }
 
 .clock__button-mini_image_sun {
   background-image: url('../../images/sun.svg');
 }
 
-@keyframes blinking {
+.clock__button-mini_image_sun:hover {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
+}
+
+.clock__end-animation {
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-name: background-change;
+}
+
+@keyframes background-change {
   0% {
-    border: 5px solid #00B7CB;
+    background: #F5F5F6;
+  }
+  12.5% {
+    background: #D7D9DF;
   }
   25% {
-    border: 5px solid red;
+    background: #F5F5F6;
+  }
+  37.5% {
+    background: #D7D9DF;
   }
   50% {
-    border: 5px solid #00B7CB;
+    background: #F5F5F6;
+  }
+  62.5% {
+    background: #D7D9DF;
   }
   75% {
-    border: 5px solid red;
+    background: #F5F5F6;
+  }
+  87.5% {
+    background: #D7D9DF;
   }
   100% {
-    border: 5px solid #00B7CB;
+    background: #F5F5F6;
   }
 }
