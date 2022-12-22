@@ -15,23 +15,23 @@ const Dial = (props) => {
   return (
     <div className={`${props.timer ?
       (props.timerActive ?
-        (theme === 'day' ? 'dial dial_status_work' : 'dial dial_dark dial_status_work dial_status_work_dark')
+        (theme === 'day' ? 'dial dial_status_work' : 'dial dial_view_dark dial_status_work dial_status_work_dark')
         :
-        (theme === 'day' ? 'dial' : 'dial dial_dark'))
+        (theme === 'day' ? 'dial' : 'dial dial_view_dark'))
       :
       (props.timerActive ?
-        (theme === 'day' ? 'dial dial_active' : 'dial dial_dark dial_active dial_active_dark')
+        (theme === 'day' ? 'dial dial_active' : 'dial dial_view_dark dial_active dial_active_dark')
         :
-        (theme === 'day' ? 'dial' : 'dial dial_dark')
-      )} ${useActiveStyle && 'dial_border-none'}`}
-    >
-      <p className={props.timer ?
+        (theme === 'day' ? 'dial' : 'dial dial_view_dark')
+      )} ${useActiveStyle && !props.timer && (theme === 'day' ? 'dial_view_day-hover' : 'dial_view_dark-hover')}`}>
+      <p className={`${props.timer ?
         (props.timerActive ?
-          (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_dark dial__text_status_workdial__text_status_work_dark')
+          (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_status_work_dark')
           :
-          (theme === 'day' ? 'dial__text' : 'dial__text dial__text_dark'))
+          (theme === 'day' ? 'dial__text' : 'dial__text dial__text_view_dark'))
         :
-        (theme === 'day' ? 'dial__text' : 'dial__text dial__text_dark')}
+        (theme === 'day' ? 'dial__text' : 'dial__text text dial__text_view_dark')}
+        ${useActiveStyle && !props.timer && (theme === 'day' ? 'dial__text_view_day-hover' : 'dial__text_view_dark-hover')}`}
         onMouseOver={() => changeActiveStyle(!useActiveStyle)}
         onMouseLeave={() => changeActiveStyle(!useActiveStyle)}>
         {`${props.timeCount.minutes}:${props.timeCount.seconds}`}

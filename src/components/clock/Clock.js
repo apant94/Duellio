@@ -88,15 +88,32 @@ const Clock = (props) => {
     }
   }
 
-  /**clock__end-animation */
+  const [placeholderOne, setPlaceholderOne] = useState('Player 1');
+  const [valueOne, setValueOne] = useState('');
+  const changeValueOne = (text) => {
+    setValueOne(text);
+  }
+
+  const [placeholderTwo, setPlaceholderTwo] = useState('Player 2');
+  const [valueTwo, setValueTwo] = useState('');
+  const changeValueTwo = (text) => {
+    setValueTwo(text);
+  }
+
   return (
     <section className={theme === 'day' ? (useTimeLeft > 5 ? 'clock' : 'clock ') : 'clock clock_dark'}>
       {/*props.newYear && 
         <input placeholder='Введите URL адрес до изображения' className={theme === 'day' ? 'clock__input clock__input_new-year' : 'clock__input clock__input_new-year clock__input_dark'} onKeyDown={(e) =>props.listenButton(e, inputRef)} ref={inputRef}/>
       */}
       <div className='clock__container-date'>
-        <input maxLength='20' placeholder='Player 1' className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'} />
-        <input maxLength='20' placeholder='Player 2' className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'} />
+        <input maxLength='20' placeholder={placeholderOne} value={valueOne}
+          className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+          style={{width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px'}}
+          onChange={(e) => changeValueOne(e.target.value)}/>
+        <input maxLength='20' placeholder='Player 2'
+          className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+          style={{width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px'}}
+          onChange={(e) => changeValueTwo(e.target.value)}/>
         {/*<div className={useTimerLeftActive ? useTimeLeft === 0 ? 'clock__dial clock__dial_active clock__dial-animation' : 'clock__dial clock__dial_active' : 'clock__dial'} onClick={switchButton} style={props.newYear ? { 'background': '#FFFFFF80' } : { 'background': '#FFFFFF' }}> */}
         <Dial timer={useTimer} timerActive={useTimerLeftActive} timeCount={useTimeLeftCount} />
         <Dial timer={useTimer} timerActive={useTimerRightActive} timeCount={useTimeRightCount} />
