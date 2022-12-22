@@ -21,24 +21,22 @@ const Clock = (props) => {
     if (useTimer === true && useTimeLeft >= 0 && useTimeRight >= 0) {
       if (useTimerLeftActive) {
         const interval = setInterval(() => setUseTimeLeftCount(() => {
-          setUseTimeLeft(useTimeLeft - 1);
-          return countClock(useTimeLeft)}), 1000);
+          setUseTimeLeft(useTimeLeft - 0,1);
+          return countClock(useTimeLeft)}), 100);
         return () => clearInterval(interval);
       }
       else if (useTimerRightActive) {
         const interval = setInterval(() => setUseTimeRightCount(() => {
-          setUseTimeRight(useTimeRight - 1);
-          return countClock(useTimeRight)}), 1000);
+          setUseTimeRight(useTimeRight - 0,1);
+          return countClock(useTimeRight)}), 100);
         return () => clearInterval(interval);
       }
     }
   }, [useTimer, useTimeLeft, useTimeRight, useTimerLeftActive, useTimerRightActive]);
 
   const countClock = (time) => {
-    let minutes = 0;
-    let seconds = 0;
     minutes = Math.trunc(time / 60);
-    seconds = time - Math.trunc(time / 60) * 60;
+    seconds = Math.trunc((time - Math.trunc(time / 60) * 60);
     if(String(seconds).length !== 2) {
       seconds = '0'+ seconds;
     }
