@@ -1,6 +1,6 @@
 import './dial.css';
 
-import React, { useRef, useState, useEffect } from 'react'; /* проверить использование */
+import React, { useState } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 const Dial = (props) => {
@@ -24,7 +24,7 @@ const Dial = (props) => {
             :
             (theme === 'day' ? 'dial' : 'dial dial_dark')
           )} ${useActiveStyle && 'dial_border-none'}`}
-          onClick={switchButton}>
+          >
           <p className={props.timer ?
             (props.timerActive ?
               (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_dark dial__text_status_workdial__text_status_work_dark')

@@ -24,13 +24,13 @@ const Clock = (props) => {
     if (useTimer === true && useTimeLeft >= 0 && useTimeRight >= 0) {
       if (useTimerLeftActive) {
         const interval = setInterval(() => setUseTimeLeftCount(() => {
-          setUseTimeLeft(useTimeLeft - 0,1);
+          setUseTimeLeft(useTimeLeft - 0.1);
           return countClock(useTimeLeft)}), 100);
         return () => clearInterval(interval);
       }
       else if (useTimerRightActive) {
         const interval = setInterval(() => setUseTimeRightCount(() => {
-          setUseTimeRight(useTimeRight - 0,1);
+          setUseTimeRight(useTimeRight - 0.1);
           return countClock(useTimeRight)}), 100);
         return () => clearInterval(interval);
       }
@@ -38,8 +38,8 @@ const Clock = (props) => {
   }, [useTimer, useTimeLeft, useTimeRight, useTimerLeftActive, useTimerRightActive]);
 
   const countClock = (time) => {
-    minutes = Math.trunc(time / 60);
-    seconds = Math.trunc((time - Math.trunc(time / 60) * 60);
+    let minutes = Math.trunc(time / 60);
+    let seconds = Math.trunc(time - Math.trunc(time / 60) * 60);
     if(String(seconds).length !== 2) {
       seconds = '0'+ seconds;
     }
