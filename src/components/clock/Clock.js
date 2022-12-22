@@ -1,6 +1,9 @@
+import './clock.css';
+
 import React, { useRef, useState, useEffect } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import './clock.css';
+
+import Dial from '../dial/Dial';
 
 const Clock = (props) => {
 
@@ -82,12 +85,7 @@ const Clock = (props) => {
       props.changeTheme('day')
     }
   }
-
-  const [useActiveStyle, setUseActiveStyle] = useState(false);
-
-  const changeActiveStyle = (state) => {
-    setUseActiveStyle(state);
-  }
+  
 /**clock__end-animation */
   return (
     <section className={theme === 'day' ? (useTimeLeft > 5 ? 'clock' : 'clock ') : 'clock clock_dark'}>
@@ -98,54 +96,8 @@ const Clock = (props) => {
         <input maxLength='20' placeholder='Player 1' className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'} />
         <input maxLength='20' placeholder='Player 2' className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'} />
         {/*<div className={useTimerLeftActive ? useTimeLeft === 0 ? 'clock__dial clock__dial_active clock__dial-animation' : 'clock__dial clock__dial_active' : 'clock__dial'} onClick={switchButton} style={props.newYear ? { 'background': '#FFFFFF80' } : { 'background': '#FFFFFF' }}> */}
-        <div className={`${useTimer ?
-          (useTimerLeftActive ?
-            (theme === 'day' ? 'clock__dial clock__dial_status_work' : 'clock__dial clock__dial_dark clock__dial_status_work clock__dial_status_work_dark')
-            :
-            (theme === 'day' ? 'clock__dial' : 'clock__dial clock__dial_dark'))
-          :
-          (useTimerLeftActive ?
-            (theme === 'day' ? 'clock__dial clock__dial_active' : 'clock__dial clock__dial_dark clock__dial_active clock__dial_active_dark')
-            :
-            (theme === 'day' ? 'clock__dial' : 'clock__dial clock__dial_dark')
-          )} ${useActiveStyle && 'clock__dial_border-none'}`}
-          onClick={switchButton}
-          onMouseEnter={() => changeActiveStyle(!useActiveStyle)}
-          onMouseLeave={() => changeActiveStyle(!useActiveStyle)}>
-          <p className={useTimer ?
-            (useTimerLeftActive ?
-              (theme === 'day' ? 'clock__dia-text clock__dia-text_status_work' : 'clock__dia-text clock__dia-text_dark clock__dia-text_status_work clock__dia-text_status_work_dark')
-              :
-              (theme === 'day' ? 'clock__dia-text' : 'clock__dia-text clock__dia-text_dark'))
-            :
-            (theme === 'day' ? 'clock__dia-text' : 'clock__dia-text clock__dia-text_dark')}>
-            {`${useTimeLeftCount.minutes}:${useTimeLeftCount.seconds}`}
-          </p>
-        </div>
-        <div className={`${useTimer ?
-          (useTimerRightActive ?
-            (theme === 'day' ? 'clock__dial clock__dial_status_work' : 'clock__dial clock__dial_dark clock__dial_status_work clock__dial_status_work_dark')
-            :
-            (theme === 'day' ? 'clock__dial' : 'clock__dial clock__dial_dark'))
-          :
-          (useTimerRightActive ?
-            (theme === 'day' ? 'clock__dial clock__dial_active' : 'clock__dial clock__dial_dark clock__dial_active clock__dial_active_dark')
-            :
-            (theme === 'day' ? 'clock__dial' : 'clock__dial clock__dial_dark')
-          )} ${useActiveStyle && 'clock__dial_border-none'}`}
-          onClick={switchButton}
-          onMouseEnter={() => changeActiveStyle(!useActiveStyle)}
-          onMouseLeave={() => changeActiveStyle(!useActiveStyle)}>
-          <p className={useTimer ?
-            (useTimerRightActive ?
-              (theme === 'day' ? 'clock__dia-text clock__dia-text_status_work' : 'clock__dia-text clock__dia-text_dark clock__dia-text_status_work clock__dia-text_status_work_dark')
-              :
-              (theme === 'day' ? 'clock__dia-text' : 'clock__dia-text clock__dia-text_dark'))
-            :
-            (theme === 'day' ? 'clock__dia-text' : 'clock__dia-text clock__dia-text_dark')}>
-            {`${useTimeRightCount.minutes}:${useTimeRightCount.seconds}`}
-          </p>
-        </div>
+        <Dial timer={useTimer} timerActive={useTimerLeftActive} timeCount={useTimeLeftCount}/>
+        <Dial timer={useTimer} timerActive={useTimerRightActive} timeCount={useTimeRightCount}/>
       </div>
       <div className='clock__container-button'>
         <button className={useTimer ? 
