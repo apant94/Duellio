@@ -46,6 +46,8 @@
 .dial__text {
   margin: 0;
   padding: 0;
+  border: 0;
+  background-color: transparent;
   font-family: 'SF UI Display';
   font-style: normal;
   font-weight: 800;
@@ -53,6 +55,8 @@
   line-height: 84px;
   font-feature-settings: 'tnum' on, 'lnum' on, 'ss03' on, 'cv02' on, 'ss02' on, 'liga' off;
   color: #2B2D33;
+  cursor: pointer;
+  outline: 0;
 }
 
 .dial__text_view_day-hover {
