@@ -21,23 +21,34 @@ const Clock = (props) => {
   const [useTimer, setUseTimer] = useState(false); // state ативности часов
 
   useEffect(() => {
-    if (useTimer === true && useTimeLeft >= 0 && useTimeRight >= 0) {
-      if (useTimerLeftActive) {
+    if (useTimer === true) {
+      if (useTimerLeftActive && useTimeLeft >= 0) {
         const interval = setInterval(() => setUseTimeLeftCount(() => {
           setUseTimeLeft(useTimeLeft - 0.1);
-          return countClock(useTimeLeft)
+          return countClock(useTimeLeft);
         }), 100);
         return () => clearInterval(interval);
       }
-      else if (useTimerRightActive) {
+      else if (useTimerRightActive && useTimeRight >= 0) {
         const interval = setInterval(() => setUseTimeRightCount(() => {
           setUseTimeRight(useTimeRight - 0.1);
-          return countClock(useTimeRight)
+          return countClock(useTimeRight);
         }), 100);
         return () => clearInterval(interval);
       }
     }
   }, [useTimer, useTimeLeft, useTimeRight, useTimerLeftActive, useTimerRightActive]);
+
+  useEffect(() => {
+    if (useTimeLeft <= 0 && useTimer) {
+      setUseTimer(false);
+      setUseTimerLeftActive(false);
+    }
+    if (useTimeRight <= 0 && useTimer) {
+      setUseTimer(false);
+      setUseTimerRightActive(false);
+    }
+  }, [useTimer, useTimeLeft, useTimeRight])
 
   const countClock = (time) => {
     let minutes = Math.trunc(time / 60);
@@ -79,6 +90,18 @@ const Clock = (props) => {
     }
   }
 
+  const choiceDial = (type) => {
+    setUseTimer(false);
+    if (type === 'left') {
+      setUseTimerLeftActive(true);
+      setUseTimerRightActive(false);
+    }
+    else {
+      setUseTimerLeftActive(false);
+      setUseTimerRightActive(true);
+    }
+  }
+
   const themeButtonChange = () => {
     if (theme === 'day') {
       props.changeTheme('night')
@@ -88,6 +111,8 @@ const Clock = (props) => {
     }
   }
 
+  //---------------------------------------------------------------
+  /* input */
   const [placeholderOne, setPlaceholderOne] = useState('Player 1');
   const [valueOne, setValueOne] = useState('');
   const changeValueOne = (text) => {
@@ -99,6 +124,7 @@ const Clock = (props) => {
   const changeValueTwo = (text) => {
     setValueTwo(text);
   }
+  //---------------------------------------------------------------
 
   return (
     <section className={theme === 'day' ? (useTimeLeft > 5 ? 'clock' : 'clock ') : 'clock clock_dark'}>
@@ -108,21 +134,23 @@ const Clock = (props) => {
       <div className='clock__container-date'>
         <input maxLength='20' placeholder={placeholderOne} value={valueOne}
           className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
-          style={{width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px'}}
-          onChange={(e) => changeValueOne(e.target.value)}/>
+          style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px' }}
+          onChange={(e) => changeValueOne(e.target.value)} />
         <input maxLength='20' placeholder='Player 2'
           className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
-          style={{width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px'}}
-          onChange={(e) => changeValueTwo(e.target.value)}/>
+          style={{ width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px' }}
+          onChange={(e) => changeValueTwo(e.target.value)} />
         {/*<div className={useTimerLeftActive ? useTimeLeft === 0 ? 'clock__dial clock__dial_active clock__dial-animation' : 'clock__dial clock__dial_active' : 'clock__dial'} onClick={switchButton} style={props.newYear ? { 'background': '#FFFFFF80' } : { 'background': '#FFFFFF' }}> */}
-        <Dial timer={useTimer} timerActive={useTimerLeftActive} timeCount={useTimeLeftCount} />
-        <Dial timer={useTimer} timerActive={useTimerRightActive} timeCount={useTimeRightCount} />
+        <Dial timer={useTimer} timerActive={useTimerLeftActive} timeCount={useTimeLeftCount} modifier='left' choice={choiceDial} />
+        <Dial timer={useTimer} timerActive={useTimerRightActive} timeCount={useTimeRightCount} modifier='right' choice={choiceDial} />
       </div>
       <div className='clock__container-button'>
         <button className={useTimer ?
           (theme === 'day' ? 'clock__button-main' : 'clock__button-main clock__button-main_dark')
           :
-          (theme === 'day' ? 'clock__button-main clock__button-main_active' : 'clock__button-main clock__button-main_dark clock__button-main_active clock__button-main_active_dark')} onClick={() => startButton(!useTimer)}>{useTimer ? 'stop' : 'start'}</button>
+          (theme === 'day' ? 'clock__button-main clock__button-main_active' : 'clock__button-main clock__button-main_dark clock__button-main_active clock__button-main_active_dark')}
+          onClick={() => startButton(!useTimer)}
+          disabled={((useTimeLeft <= 0 && useTimerLeftActive === true) && true) || ((useTimeRight <= 0 && useTimerRightActive === true) && true)}>{useTimer ? 'stop' : 'start'}</button>
         <button className={theme === 'day' ? 'clock__button-main' : 'clock__button-main clock__button-main_dark'} onClick={switchButton}>switch</button>
         <button className={theme === 'day' ? 'clock__button-mini' : 'clock__button-mini clock__button-mini_dark'} onClick={() => changeButtonTime(1)}>1 min</button>
         <button className={theme === 'day' ? 'clock__button-mini' : 'clock__button-mini clock__button-mini_dark'} onClick={() => changeButtonTime(4)}>4 min</button>
