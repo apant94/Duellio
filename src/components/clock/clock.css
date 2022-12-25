@@ -56,27 +56,33 @@
   background: #FFFFFF;
 }
 
-.clock__input_dark {
-  color: #FFF;
-}
-
 .clock__input::placeholder {
   color: #2B2D33;
+  /*background: #F5F5F6;*/
+}
+
+.clock__input_dark {
+  color: #FFF;
 }
 
 .clock__input_dark::placeholder {
   color: #FFF;
 }
 
-.clock__input_new-year {
-  border: 3px solid blue;
-  text-align: start;
-  position: absolute;
-  bottom: -50px;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  background-color: rgba(255, 255, 255, .7);
+.clock__input_dark:hover {
+  color: #2B2D33;
+}
+
+.clock__input_dark:hover::placeholder {
+  color: #2B2D33;
+}
+
+.clock__input_dark:focus-visible {
+  color: #2B2D33;
+}
+
+.clock__input_dark:focus-visible::placeholder {
+  color: #2B2D33;
 }
 
 .clock__container-button {
@@ -200,40 +206,4 @@
   background-image: url('../../images/sun_active.svg');
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.clock__end-animation {
-  animation-duration: 4s;
-  animation-timing-function: linear;
-  animation-name: background-change;
-}
-
-@keyframes background-change {
-  0% {
-    background: #F5F5F6;
-  }
-  12.5% {
-    background: #D7D9DF;
-  }
-  25% {
-    background: #F5F5F6;
-  }
-  37.5% {
-    background: #D7D9DF;
-  }
-  50% {
-    background: #F5F5F6;
-  }
-  62.5% {
-    background: #D7D9DF;
-  }
-  75% {
-    background: #F5F5F6;
-  }
-  87.5% {
-    background: #D7D9DF;
-  }
-  100% {
-    background: #F5F5F6;
-  }
 }

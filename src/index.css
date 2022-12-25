@@ -23,3 +23,39 @@ body {
   background-repeat: no-repeat;
   object-fit: cover;
 }
+
+.App__end-animation {
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-name: background-change;
+}
+
+@keyframes background-change {
+  0% {
+    background: #F5F5F6;
+  }
+  12.5% {
+    background: #D7D9DF;
+  }
+  25% {
+    background: #F5F5F6;
+  }
+  37.5% {
+    background: #D7D9DF;
+  }
+  50% {
+    background: #F5F5F6;
+  }
+  62.5% {
+    background: #D7D9DF;
+  }
+  75% {
+    background: #F5F5F6;
+  }
+  87.5% {
+    background: #D7D9DF;
+  }
+  100% {
+    background: #F5F5F6;
+  }
+}
