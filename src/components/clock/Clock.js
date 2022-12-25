@@ -111,6 +111,39 @@ const Clock = (props) => {
     }
   }
 
+  const checkTime = (string) => {
+    switch (string.length) {
+      case 1:
+        return 1;
+      case 2:
+        return 2;
+      default:
+        return 0;
+    }
+  }
+
+  const setTheTime = (time) => {
+    let obj;
+
+    if (typeof (time) === 'object') {
+      obj = time[0].split(':');
+    }
+    else
+      obj = time.split(':');
+
+    const checkMinute = Number(obj[0]);
+    const checkSecond = Number(obj[1]);
+
+    console.log(checkMinute * 60 + checkSecond);
+
+    setUseTimeLeft(checkMinute * 60 + checkSecond);
+    setUseTimeRight(checkMinute * 60 + checkSecond);
+    setUseTimeLeftCount(countClock(checkMinute * 60 + checkSecond));
+    setUseTimeRightCount(countClock(checkMinute * 60 + checkSecond));
+  }
+
+
+
   //---------------------------------------------------------------
   /* input */
   const [placeholderOne, setPlaceholderOne] = useState('Player 1');
@@ -141,8 +174,20 @@ const Clock = (props) => {
           style={{ width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px' }}
           onChange={(e) => changeValueTwo(e.target.value)} />
         {/*<div className={useTimerLeftActive ? useTimeLeft === 0 ? 'clock__dial clock__dial_active clock__dial-animation' : 'clock__dial clock__dial_active' : 'clock__dial'} onClick={switchButton} style={props.newYear ? { 'background': '#FFFFFF80' } : { 'background': '#FFFFFF' }}> */}
-        <Dial timer={useTimer} timerActive={useTimerLeftActive} timeCount={useTimeLeftCount} modifier='left' choice={choiceDial} />
-        <Dial timer={useTimer} timerActive={useTimerRightActive} timeCount={useTimeRightCount} modifier='right' choice={choiceDial} />
+        <Dial
+          timer={useTimer}
+          timerActive={useTimerLeftActive}
+          timeCount={useTimeLeftCount}
+          modifier='left'
+          choice={choiceDial}
+          setTheTime={setTheTime} />
+        <Dial
+          timer={useTimer}
+          timerActive={useTimerRightActive}
+          timeCount={useTimeRightCount}
+          modifier='right'
+          choice={choiceDial}
+          setTheTime={setTheTime} />
       </div>
       <div className='clock__container-button'>
         <button className={useTimer ?
