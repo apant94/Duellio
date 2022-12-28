@@ -18,6 +18,17 @@ const Clock = (props) => {
   const [useTimerLeftActive, setUseTimerLeftActive] = useState(true); // state активности циферблата
   const [useTimerRightActive, setUseTimerRightActive] = useState(false);
 
+  const [useTimerLeftInputValue, setUseTimerLeftInputValue] = useState(``);
+  const [useTimerRightInputValue, setUseTimerRightInputValue] = useState(``);
+
+  const [useTimerAllInputValue, setUseTimerAllInputValue] = useState('');
+  // -----
+  const handleChangeValueAllInput = (value) => {
+    setUseTimerAllInputValue(value);
+  }
+
+  // -----
+
   const [useTimer, setUseTimer] = useState(false); // state ативности часов
 
   useEffect(() => {
@@ -60,6 +71,7 @@ const Clock = (props) => {
   }
 
   const changeButtonTime = (change) => {
+    setUseTimer(false);
     if (change === 4) {
       setUseTimeLeft(240);
       setUseTimeRight(240);
@@ -75,10 +87,16 @@ const Clock = (props) => {
   }
 
   const startButton = () => {
+    if (props.inputStateActive) {
+      setTheTime(useTimerAllInputValue);
+    }
     setUseTimer(!useTimer);
   }
 
   const switchButton = () => {
+    if (props.inputStateActive) {
+      setTheTime(useTimerAllInputValue);
+    }
     setUseTimer(false);
     if (useTimerLeftActive) {
       setUseTimerLeftActive(false);
@@ -90,7 +108,8 @@ const Clock = (props) => {
     }
   }
 
-  const choiceDial = (type) => {
+  const choiceDial = (e, type) => {
+    e.stopPropagation();
     setUseTimer(false);
     if (type === 'left') {
       setUseTimerLeftActive(true);
@@ -123,8 +142,6 @@ const Clock = (props) => {
     const checkMinute = Number(obj[0]);
     const checkSecond = Number(obj[1]);
 
-    console.log(checkMinute * 60 + checkSecond);
-
     setUseTimeLeft(checkMinute * 60 + checkSecond);
     setUseTimeRight(checkMinute * 60 + checkSecond);
     setUseTimeLeftCount(countClock(checkMinute * 60 + checkSecond));
@@ -132,7 +149,7 @@ const Clock = (props) => {
   }
 
   //---------------------------------------------------------------
-  /* input */
+  /* input player */
   const [placeholderOne, setPlaceholderOne] = useState('Player 1');
   const [valueOne, setValueOne] = useState('');
   const changeValueOne = (text) => {
@@ -144,22 +161,68 @@ const Clock = (props) => {
   const changeValueTwo = (text) => {
     setValueTwo(text);
   }
+
+  const [inputPlayerOne, setInputPlayerOne] = useState(false);
+  const writePlayerOne = () => {
+    setInputPlayerOne(true);
+  }
+
+  const onKeyEnterOne = (e) => {
+    if (e.key === 'Enter') {
+      setValueOne(editingText(valueOne));
+      setInputPlayerOne(false);
+    }
+  }
+
+  const [inputPlayerTwo, setInputPlayerTwo] = useState(false);
+  const writePlayerTwo = () => {
+    setInputPlayerTwo(true)
+  }
+
+  const onKeyEnterTwo = (e) => {
+    if (e.key === 'Enter') {
+      setValueTwo(editingText(valueTwo));
+      setInputPlayerTwo(false);
+    }
+  }
+
+  const editingText = (text) => {
+    return text.trim();
+  }
   //---------------------------------------------------------------
 
   return (
     <section className={theme === 'day' ? (useTimeLeft > 5 ? 'clock' : 'clock ') : 'clock clock_dark'}>
-      {/*props.newYear && 
-        <input placeholder='Введите URL адрес до изображения' className={theme === 'day' ? 'clock__input clock__input_new-year' : 'clock__input clock__input_new-year clock__input_dark'} onKeyDown={(e) =>props.listenButton(e, inputRef)} ref={inputRef}/>
-      */}
       <div className='clock__container-date'>
-        <input maxLength='20' placeholder={placeholderOne} value={valueOne}
-          className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
-          style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px' }}
-          onChange={(e) => changeValueOne(e.target.value)} />
-        <input maxLength='20' placeholder='Player 2'
-          className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
-          style={{ width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px' }}
-          onChange={(e) => changeValueTwo(e.target.value)} />
+        {
+          inputPlayerOne ?
+            <input maxLength='20' placeholder={placeholderOne} value={valueOne}
+              className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+              style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px' }}
+              onChange={(e) => changeValueOne(e.target.value)}
+              onKeyDown={(e) => onKeyEnterOne(e)} />
+            :
+            <p className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+              style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px' }}
+              onDoubleClick={writePlayerOne}>
+              {valueOne.length === 0 ? placeholderOne : valueOne}
+            </p>
+        }
+        {
+          inputPlayerTwo ?
+            <input maxLength='20' placeholder={placeholderTwo} value={valueTwo}
+              className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+              style={{ width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px' }}
+              onChange={(e) => changeValueTwo(e.target.value)}
+              onKeyDown={(e) => onKeyEnterTwo(e)} />
+            :
+            <p className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+              style={{ width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px' }}
+              onDoubleClick={writePlayerTwo}>
+              {valueTwo.length === 0 ? placeholderTwo : valueTwo}
+            </p>
+        }
+
         {/*<div className={useTimerLeftActive ? useTimeLeft === 0 ? 'clock__dial clock__dial_active clock__dial-animation' : 'clock__dial clock__dial_active' : 'clock__dial'} onClick={switchButton} style={props.newYear ? { 'background': '#FFFFFF80' } : { 'background': '#FFFFFF' }}> */}
         <Dial
           timer={useTimer}
@@ -167,14 +230,20 @@ const Clock = (props) => {
           timeCount={useTimeLeftCount}
           modifier='left'
           choice={choiceDial}
-          setTheTime={setTheTime} />
+          setTheTime={setTheTime}
+          inputStateActive={props.inputStateActive}
+          changeInputStateClick={props.changeInputStateClick}
+          handleChangeValueAllInput={handleChangeValueAllInput} />
         <Dial
           timer={useTimer}
           timerActive={useTimerRightActive}
           timeCount={useTimeRightCount}
           modifier='right'
           choice={choiceDial}
-          setTheTime={setTheTime} />
+          setTheTime={setTheTime}
+          inputStateActive={props.inputStateActive}
+          changeInputStateClick={props.changeInputStateClick}
+          handleChangeValueAllInput={handleChangeValueAllInput} />
       </div>
       <div className='clock__container-button'>
         <button className={useTimer ?

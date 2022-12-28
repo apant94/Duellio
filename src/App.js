@@ -7,8 +7,10 @@ function App() {
 
   const [useTheme, setUseTheme] = useState('day');
 
-  const [animationLeft, setAnimationLeft] = useState(false);
-  const [animationRight, setAnimationRight] = useState(false);
+  const [inputState, setInputState] = useState(false);
+
+  const [animationLeft, setAnimationLeft] = useState(false);//
+  const [animationRight, setAnimationRight] = useState(false);//
 
   const changeTheme = (theme) => {
     setUseTheme(theme);
@@ -23,14 +25,21 @@ function App() {
     }
   }
 
+  const changeInputStateClick = (bool) => {
+    setInputState(bool);
+  }
+
   return (
     <div className={`
-    ${useTheme === 'day' ? 'App' : 'App App_dark'}`}>
+    ${useTheme === 'day' ? 'App' : 'App App_dark'}`}
+    onClick={() => changeInputStateClick(false)}>
       <ThemeContext.Provider value={useTheme}>
         <Header />
         <Clock
           changeTheme={changeTheme}
-          changeAnimationDay={changeAnimationDay} />
+          changeAnimationDay={changeAnimationDay}
+          inputStateActive={inputState}
+          changeInputStateClick={changeInputStateClick}/>
       </ThemeContext.Provider>
     </div>
   );

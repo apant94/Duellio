@@ -44,6 +44,8 @@
 }
 
 .dial__text {
+  position: absolute; /* для инпута */
+  z-index: -5;
   margin: 0;
   padding: 0;
   border: 0;
@@ -57,6 +59,11 @@
   color: #2B2D33;
   cursor: pointer;
   outline: 0;
+}
+
+.dial__text::selection {
+  text-shadow: none;
+  background: #22BACB1A;
 }
 
 .dial__text_view_day-hover {
