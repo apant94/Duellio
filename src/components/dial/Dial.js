@@ -8,8 +8,6 @@ const Dial = (props) => {
 
   const [inputValue, setInputValue] = useState(`${props.timeCount.minutes}:${props.timeCount.seconds}`);
 
-  const [field, setField] = useState(false);
-
   const [useActiveStyle, setUseActiveStyle] = useState(false);
 
   const ref = useRef(null);
@@ -28,17 +26,18 @@ const Dial = (props) => {
 
   const changeInputValue = (e) => {
     const regex = /\d{0,2}:\d{0,2}/;
-    if(e.target.value.match(regex)) {
-      obj = e.target.value.match(regex).split(':');
+    const value = e.target.value.match(regex);
+    if(value) {
+      obj = value.split(':');
       const checkMinute = Number(obj[0]);
       const checkSecond = Number(obj[1]);
       if(checkMinute <= 24 && checkSecond <= 59) {
-        setInputValue(e.target.value.match(regex));
-        props.handleChangeValueAllInput(e.target.value.match(regex));
+        setInputValue(value);
+        props.handleChangeValueAllInput(value);
       }
-      else if (checkMinute === 25 && checkSecond === 0) {
-        setInputValue(e.target.value.match(regex));
-        props.handleChangeValueAllInput(e.target.value.match(regex)); 
+      else if (checkMinute === 25) {
+        setInputValue('25:00');
+        props.handleChangeValueAllInput('25:00'); 
       }
     }
   }
@@ -48,13 +47,6 @@ const Dial = (props) => {
       props.setTheTime(inputValue);
       props.changeInputStateClick(false);
     }
-  }
-
-  const changeField = (bool) => {
-    /*if(bool) {
-      changeActiveStyle(!useActiveStyle);
-    }
-    setField(bool);*/
   }
 
   const changeActiveStyle = (state) => {
@@ -73,39 +65,7 @@ const Dial = (props) => {
         :
         (theme === 'day' ? 'dial' : 'dial dial_view_dark')
       )} ${useActiveStyle && !props.timer && (theme === 'day' ? 'dial_view_day-hover' : 'dial_view_dark-hover')}`}
-      onClick={(e) => props.choice(e, props.modifier)}
-      onMouseLeave={() => changeField(false)}>
-      {/*!field ?
-        <p className={`${props.timer ?
-          (props.timerActive ?
-            (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_status_work_dark')
-            :
-            (theme === 'day' ? 'dial__text' : 'dial__text dial__text_view_dark'))
-          :
-          (theme === 'day' ? 'dial__text' : 'dial__text text dial__text_view_dark')}
-          ${useActiveStyle && !props.timer && (theme === 'day' ? 'dial__text_view_day-hover' : 'dial__text_view_dark-hover')}`}
-          onMouseOver={() => changeActiveStyle(!useActiveStyle)}
-          onMouseLeave={() => changeActiveStyle(!useActiveStyle)}
-          onDoubleClick={() => {changeField(true); handleClickText()}}>
-          {`${props.timeCount.minutes}:${props.timeCount.seconds}`}
-        </p>
-        :
-        <input className={`${props.timer ?
-          (props.timerActive ?
-            (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_status_work_dark')
-            :
-            (theme === 'day' ? 'dial__text' : 'dial__text dial__text_view_dark'))
-          :
-          (theme === 'day' ? 'dial__text' : 'dial__text text dial__text_view_dark')}
-          ${(theme === 'day' ? 'dial__text_view_day-hover' : 'dial__text_view_dark-hover')}`}
-          {/*style={{ width: (6 + 1) * 33 + 'px', textAlign: 'center' }}
-          value={inputValue}
-          ref={ref}
-          onChange={(e) => changeInputValue(e)}
-          onKeyDown={(e) => onKeyEnter(e)}
-          }
-          {/*onFocus={(e) => handleFocus(e)}/>
-      */}
+      onClick={(e) => props.choice(e, props.modifier)}>
         <p className={`${props.timer ?
           (props.timerActive ?
             (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_status_work_dark')
