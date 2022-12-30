@@ -17,18 +17,18 @@ const Dial = (props) => {
   }, [props.timeCount.minutes, props.timeCount.seconds])
 
   const handleClickText = () => {
-    console.log(props.inputStateActive);
     props.changeInputStateClick(true);
     ref.current.focus();
-    const textObj = ref.current.value.split(':')
+    const textObj = ref.current.value.split(':');
     ref.current.setSelectionRange(0, textObj[0].length);
   };
 
   const changeInputValue = (e) => {
     const regex = /\d{0,2}:\d{0,2}/;
-    const value = e.target.value.match(regex);
+    const valueFirst = e.target.value.match(regex);
+    const value = valueFirst[0];
     if(value) {
-      obj = value.split(':');
+      const obj = value.split(':');
       const checkMinute = Number(obj[0]);
       const checkSecond = Number(obj[1]);
       if(checkMinute <= 24 && checkSecond <= 59) {
@@ -91,7 +91,7 @@ const Dial = (props) => {
           :
           (theme === 'day' ? 'dial__text' : 'dial__text text dial__text_view_dark')}
           ${(theme === 'day' ? 'dial__text_view_day-hover' : 'dial__text_view_dark-hover')}`}
-          style={props.timerActive && props.inputStateActive ? {zIndex: '5',  width: (5 + ref.current.value.split(':')[0].length) * 33 + 'px', textAlign: 'center' } : {zIndex: '-5',  width: (6 + 1) * 33 + 'px', textAlign: 'center' }}
+          style={props.timerActive && props.inputStateActive ? {zIndex: '5',  width: (5 + ref.current.value.split(':')[0].length) * 33 + 'px'/*, textAlign: 'center' */} : {zIndex: '-5'/*,  width: (6 + 1) * 33 + 'px', textAlign: 'center' */}}
           value={inputValue}
           ref={ref}
           onChange={(e) => changeInputValue(e)}
