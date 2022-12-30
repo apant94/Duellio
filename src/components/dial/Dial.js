@@ -29,8 +29,17 @@ const Dial = (props) => {
   const changeInputValue = (e) => {
     const regex = /\d{0,2}:\d{0,2}/;
     if(e.target.value.match(regex)) {
-      setInputValue(e.target.value.match(regex));
-      props.handleChangeValueAllInput(e.target.value.match(regex));
+      obj = e.target.value.match(regex).split(':');
+      const checkMinute = Number(obj[0]);
+      const checkSecond = Number(obj[1]);
+      if(checkMinute <= 24 && checkSecond <= 59) {
+        setInputValue(e.target.value.match(regex));
+        props.handleChangeValueAllInput(e.target.value.match(regex));
+      }
+      else if (checkMinute === 25 && checkSecond === 0) {
+        setInputValue(e.target.value.match(regex));
+        props.handleChangeValueAllInput(e.target.value.match(regex)); 
+      }
     }
   }
 
