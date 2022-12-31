@@ -31,13 +31,37 @@ const Dial = (props) => {
       const obj = value.split(':');
       const checkMinute = Number(obj[0]);
       const checkSecond = Number(obj[1]);
-      if(checkMinute <= 98 && checkSecond <= 59) {
-        setInputValue(value);
-        props.handleChangeValueAllInput(value);
+      if(0 < checkMinute && checkMinute <= 98 && 0 < checkSecond && checkSecond <= 59) {
+        if(checkMinute <= 9) {
+          if (checkSecond <= 9) {
+            setInputValue(`${checkMinute}:0${checkSecond}`);
+            props.handleChangeValueAllInput(`${checkMinute}:0${checkSecond}`);
+          }
+          else {
+            setInputValue(`${checkMinute}:${checkSecond}`);
+            props.handleChangeValueAllInput(`${checkMinute}:${checkSecond}`);
+          }
+        }
+        else {
+          setInputValue(value);
+          props.handleChangeValueAllInput(value);
+        }
       }
       else if (checkMinute === 99) {
         setInputValue('99:00');
         props.handleChangeValueAllInput('99:00'); 
+      }
+      else if (checkMinute === 0 && 0 < checkSecond && checkSecond <= 59) {
+        setInputValue(`0:${checkSecond}`);
+        props.handleChangeValueAllInput(`0:${checkSecond}`); 
+      }
+      else if (checkMinute !== 0 && checkSecond === 0) {
+        setInputValue(`${checkMinute}:00`);
+        props.handleChangeValueAllInput(`${checkMinute}:00`); 
+      }
+      else if (checkMinute === 0 && checkSecond === 0) {
+        setInputValue('0:00');
+        props.handleChangeValueAllInput('0:00'); 
       }
     }
   }
