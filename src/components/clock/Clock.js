@@ -21,7 +21,7 @@ const Clock = (props) => {
   const [useTimerLeftInputValue, setUseTimerLeftInputValue] = useState(``);
   const [useTimerRightInputValue, setUseTimerRightInputValue] = useState(``);
 
-  const [useTimerAllInputValue, setUseTimerAllInputValue] = useState('');
+  const [useTimerAllInputValue, setUseTimerAllInputValue] = useState('4:00');
   // -----
   const handleChangeValueAllInput = (value) => {
     setUseTimerAllInputValue(value);
@@ -77,12 +77,16 @@ const Clock = (props) => {
       setUseTimeRight(240);
       setUseTimeLeftCount(countClock(240));
       setUseTimeRightCount(countClock(240));
+
+      setUseTimerAllInputValue('4:00');
     }
     else {
       setUseTimeLeft(60);
       setUseTimeRight(60);
       setUseTimeLeftCount(countClock(60));
       setUseTimeRightCount(countClock(60));
+
+      setUseTimerAllInputValue('1:00');
     }
   }
 
