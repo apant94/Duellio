@@ -15,9 +15,6 @@ const Clock = (props) => {
   const [useTimerLeftActive, setUseTimerLeftActive] = useState(true); // state активности циферблата
   const [useTimerRightActive, setUseTimerRightActive] = useState(false);
 
-  const [useTimerLeftInputValue, setUseTimerLeftInputValue] = useState(``);
-  const [useTimerRightInputValue, setUseTimerRightInputValue] = useState(``);
-
   const [useTimerAllInputValue, setUseTimerAllInputValue] = useState('4:00');
   // -----
   const handleChangeValueAllInput = (value) => {
@@ -25,11 +22,8 @@ const Clock = (props) => {
   }
 
   // -----
-
-  const [useTimer, setUseTimer] = useState(false); // state ативности часов
-
-  useEffect(() => {
-    if (useTimer === true) {
+  useEffect(() => { // поднять данный хук в апп
+    if (props.useTimer === true) {
       if (useTimerLeftActive && props.useTimeLeft > 0) {
         const interval = setInterval(() => setUseTimeLeftCount(() => {
           props.timeChange('left', props.useTimeLeft - 0.1);
@@ -45,18 +39,16 @@ const Clock = (props) => {
         return () => clearInterval(interval);
       }
     }
-  }, [useTimer, props.useTimeLeft, props.useTimeRight, useTimerLeftActive, useTimerRightActive, props]);
+  },[useTimerLeftActive, useTimerRightActive, props]);
 
   useEffect(() => {
     if (props.useTimeLeft <= 0 && useTimerLeftActive) {
-      setUseTimer(false);
-      //setUseTimerLeftActive(false);
+      props.changeTimerStart(false);
     }
     if (props.useTimeRight <= 0 && useTimerRightActive) {
-      setUseTimer(false);
-      //setUseTimerRightActive(false);
+      props.changeTimerStart(false);
     }
-  }, [props.useTimeLeft, props.useTimeRight, useTimerLeftActive, useTimerRightActive])
+  }, [props, useTimerLeftActive, useTimerRightActive])
 
   const countClock = (time) => {
     let minutes = Math.trunc(time / 60);
@@ -68,7 +60,7 @@ const Clock = (props) => {
   }
 
   const changeButtonTime = (change) => {
-    setUseTimer(false);
+    props.changeTimerStart(false);
     if (change === 4) {
       props.timeChange('left', 240);
       props.timeChange('right', 240);
@@ -91,14 +83,14 @@ const Clock = (props) => {
     if (props.inputStateActive) {
       setTheTime(useTimerAllInputValue);
     }
-    setUseTimer(!useTimer);
+    props.changeTimerStart(!props.useTimer);
   }
 
   const switchButton = () => {
     if (props.inputStateActive) {
       setTheTime(useTimerAllInputValue);
     }
-    setUseTimer(false);
+    props.changeTimerStart(false);
     if (useTimerLeftActive) {
       setUseTimerLeftActive(false);
       setUseTimerRightActive(true);
@@ -111,7 +103,7 @@ const Clock = (props) => {
 
   const choiceDial = (e, type) => {
     e.stopPropagation();
-    setUseTimer(false);
+    props.changeTimerStart(false);
     if (type === 'left') {
       setUseTimerLeftActive(true);
       setUseTimerRightActive(false);
@@ -223,10 +215,8 @@ const Clock = (props) => {
               {valueTwo.length === 0 ? placeholderTwo : valueTwo}
             </p>
         }
-
-        {/*<div className={useTimerLeftActive ? useTimeLeft === 0 ? 'clock__dial clock__dial_active clock__dial-animation' : 'clock__dial clock__dial_active' : 'clock__dial'} onClick={switchButton} style={props.newYear ? { 'background': '#FFFFFF80' } : { 'background': '#FFFFFF' }}> */}
         <Dial
-          timer={useTimer}
+          timer={props.useTimer}
           timerActive={useTimerLeftActive}
           timeCount={useTimeLeftCount}
           modifier='left'
@@ -236,7 +226,7 @@ const Clock = (props) => {
           changeInputStateClick={props.changeInputStateClick}
           handleChangeValueAllInput={handleChangeValueAllInput} />
         <Dial
-          timer={useTimer}
+          timer={props.useTimer}
           timerActive={useTimerRightActive}
           timeCount={useTimeRightCount}
           modifier='right'
@@ -247,12 +237,12 @@ const Clock = (props) => {
           handleChangeValueAllInput={handleChangeValueAllInput} />
       </div>
       <div className='clock__container-button'>
-        <button className={useTimer ?
+        <button className={props.useTimer ?
           (theme === 'day' ? 'clock__button-main' : 'clock__button-main clock__button-main_dark')
           :
           (theme === 'day' ? 'clock__button-main clock__button-main_active' : 'clock__button-main clock__button-main_dark clock__button-main_active clock__button-main_active_dark')}
           onClick={startButton}
-          disabled={((props.useTimeLeft <= 0 && useTimerLeftActive === true) && true) || ((props.useTimeRight <= 0 && useTimerRightActive === true) && true)}>{useTimer ? 'stop' : 'start'}</button>
+          disabled={((props.useTimeLeft <= 0 && useTimerLeftActive === true) && true) || ((props.useTimeRight <= 0 && useTimerRightActive === true) && true)}>{props.useTimer ? 'stop' : 'start'}</button>
         <button className={theme === 'day' ? 'clock__button-main' : 'clock__button-main clock__button-main_dark'} onClick={switchButton}>switch</button>
         <button className={theme === 'day' ? 'clock__button-mini' : 'clock__button-mini clock__button-mini_dark'} onClick={() => changeButtonTime(1)}>1 min</button>
         <button className={theme === 'day' ? 'clock__button-mini' : 'clock__button-mini clock__button-mini_dark'} onClick={() => changeButtonTime(4)}>4 min</button>
