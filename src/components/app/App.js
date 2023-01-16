@@ -19,21 +19,47 @@ function App() {
   const [useTimeLeft, setUseTimeLeft] = useState(240); // state значения таймера
   const [useTimeRight, setUseTimeRight] = useState(240);
 
+  const [useTimerLeftActive, setUseTimerLeftActive] = useState(true); // state активности циферблата
+  const [useTimerRightActive, setUseTimerRightActive] = useState(false);
+
   const [useTimerSoundLeftStart, setUseTimerSoundLeftStart] = useState(false);
   const [useTimerSoundRightStart, setUseTimerSoundRightStart] = useState(false);
-  
-  const [play] = useSound(endingSound);
+
+  const [playLeft, { pause: pauseOne }] = useSound(endingSound);
+  const [playRight, { pause: pauseTwo }] = useSound(endingSound);
 
   useEffect(() => {
-    if(useTimeLeft <= 14.6 && !useTimerSoundLeftStart) {
-      setUseTimerSoundLeftStart(true);
-      play();
+    if (useTimeLeft <= 0 && useTimerLeftActive) {
+      changeTimerStart(false);
     }
-    if(useTimeRight <= 14.5 && !useTimerSoundRightStart) {
-      setUseTimerSoundRightStart(true);
-      play();
+    if (useTimeRight <= 0 && useTimerRightActive) {
+      changeTimerStart(false);
     }
-  }, [play, useTimeLeft, useTimeRight, useTimerSoundLeftStart, useTimerSoundRightStart])
+  }, [useTimeLeft, useTimeRight, useTimerLeftActive, useTimerRightActive])
+
+  useEffect(() => {
+    if (!useTimer) {
+      pauseOne();
+      pauseTwo();
+    }
+    else {
+      if (useTimeLeft <= 14.5 && !useTimerSoundLeftStart) {
+        setUseTimerSoundLeftStart(true);
+      }
+      if (useTimeRight <= 14.5 && !useTimerSoundRightStart) {
+        setUseTimerSoundRightStart(true);
+      }
+    }
+  }, [useTimeLeft, useTimeRight, useTimer, useTimerSoundLeftStart, useTimerSoundRightStart, pauseOne, pauseTwo]);
+
+  useEffect(() => {
+    if(useTimerSoundLeftStart && useTimer && useTimerLeftActive){
+      playLeft();
+    }
+    if(useTimerSoundRightStart && useTimer && useTimerRightActive){
+      playRight();
+    }
+  }, [playLeft, playRight, useTimer, useTimerLeftActive, useTimerRightActive, useTimerSoundLeftStart, useTimerSoundRightStart]);
 
   const changeTheme = (theme) => {
     setUseTheme(theme);
@@ -43,8 +69,30 @@ function App() {
     setInputState(bool);
   }
 
+  const changeTimerActive = () => {
+    if (useTimerLeftActive) {
+      setUseTimerLeftActive(false);
+      setUseTimerRightActive(true);
+    }
+    else {
+      setUseTimerLeftActive(true);
+      setUseTimerRightActive(false);
+    }
+  }
+
+  const changeTimerActiveWithParams = (type) => {
+    if (type === 'left') {
+      setUseTimerLeftActive(true);
+      setUseTimerRightActive(false);
+    }
+    else {
+      setUseTimerLeftActive(false);
+      setUseTimerRightActive(true);
+    }
+  }
+
   const timeChange = (timerPosition, time) => {
-    if(timerPosition === 'left') {
+    if (timerPosition === 'left') {
       setUseTimeLeft(time);
     }
     else {
@@ -59,7 +107,7 @@ function App() {
   return (
     <div className={`
     ${useTheme === 'day' ? 'app' : 'app app_dark'}`}
-    onClick={() => changeInputStateClick(false)}>
+      onClick={() => changeInputStateClick(false)}>
       <ThemeContext.Provider value={useTheme}>
         <Header />
         <Clock
@@ -67,10 +115,16 @@ function App() {
           timeChange={timeChange}
           useTimer={useTimer}
           changeTimerStart={changeTimerStart}
+
           useTimeLeft={useTimeLeft}
+          useTimerLeftActive={useTimerLeftActive}
           useTimeRight={useTimeRight}
+          useTimerRightActive={useTimerRightActive}
+          changeTimerActive={changeTimerActive}
+          changeTimerActiveWithParams={changeTimerActiveWithParams}
+
           inputStateActive={inputState}
-          changeInputStateClick={changeInputStateClick}/>
+          changeInputStateClick={changeInputStateClick} />
       </ThemeContext.Provider>
     </div>
   );
