@@ -3,6 +3,7 @@ import './app.css';
 import { useState, useEffect } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import Header from '../header/Header';
+import Footer from '../footer/Footer';
 import Clock from '../clock/Clock';
 
 import useSound from 'use-sound'; // импорт звуков
@@ -125,6 +126,7 @@ function App() {
 
           inputStateActive={inputState}
           changeInputStateClick={changeInputStateClick} />
+          <Footer />
       </ThemeContext.Provider>
     </div>
   );
