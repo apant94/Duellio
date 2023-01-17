@@ -27,12 +27,12 @@ const Dial = (props) => {
     const regex = /\d{0,2}:\d{0,2}/;
     const valueFirst = e.target.value.match(regex);
     const value = valueFirst[0];
-    if(value) {
+    if (value) {
       const obj = value.split(':');
       const checkMinute = Number(obj[0]);
       const checkSecond = Number(obj[1]);
-      if(0 < checkMinute && checkMinute <= 98 && 0 < checkSecond && checkSecond <= 59) {
-        if(checkMinute <= 9) {
+      if (0 < checkMinute && checkMinute <= 98 && 0 < checkSecond && checkSecond <= 59) {
+        if (checkMinute <= 9) {
           if (checkSecond <= 9) {
             setInputValue(`${checkMinute}:0${checkSecond}`);
             props.handleChangeValueAllInput(`${checkMinute}:0${checkSecond}`);
@@ -49,25 +49,25 @@ const Dial = (props) => {
       }
       else if (checkMinute === 99) {
         setInputValue('99:00');
-        props.handleChangeValueAllInput('99:00'); 
+        props.handleChangeValueAllInput('99:00');
       }
       else if (checkMinute === 0 && 0 < checkSecond && checkSecond <= 59) {
         setInputValue(`0:${checkSecond}`);
-        props.handleChangeValueAllInput(`0:${checkSecond}`); 
+        props.handleChangeValueAllInput(`0:${checkSecond}`);
       }
       else if (checkMinute !== 0 && checkSecond === 0) {
         setInputValue(`${checkMinute}:00`);
-        props.handleChangeValueAllInput(`${checkMinute}:00`); 
+        props.handleChangeValueAllInput(`${checkMinute}:00`);
       }
       else if (checkMinute === 0 && checkSecond === 0) {
         setInputValue('0:00');
-        props.handleChangeValueAllInput('0:00'); 
+        props.handleChangeValueAllInput('0:00');
       }
     }
   }
 
   const onKeyEnter = (e) => {
-    if(e.key === 'Enter') {
+    if (e.key === 'Enter') {
       props.setTheTime(inputValue);
       props.changeInputStateClick(false);
     }
@@ -80,46 +80,45 @@ const Dial = (props) => {
   return (
     <div className={`${props.timer ?
       (props.timerActive ?
-        (theme === 'day' ? 'dial dial_status_work' : 'dial dial_view_dark dial_status_work dial_status_work_dark')
+        (theme === 'day' ? 'dial dial_status_work' : 'dial dial_dark dial_status_work dial_status_work_dark')
         :
-        (theme === 'day' ? 'dial' : 'dial dial_view_dark'))
+        (theme === 'day' ? 'dial' : 'dial dial_dark'))
       :
       (props.timerActive ?
-        (theme === 'day' ? 'dial dial_active' : 'dial dial_view_dark dial_active dial_active_dark')
+        (theme === 'day' ? 'dial dial_active' : 'dial dial_dark dial_active dial_active_dark')
         :
-        (theme === 'day' ? 'dial' : 'dial dial_view_dark')
-      )} ${useActiveStyle && !props.timer && (theme === 'day' ? 'dial_view_day-hover' : 'dial_view_dark-hover')}`}
+        (theme === 'day' ? 'dial' : 'dial dial_dark'))}`}
       onClick={(e) => props.choice(e, props.modifier)}>
-        <p className={`${props.timer ?
-          (props.timerActive ?
-            (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_status_work_dark')
-            :
-            (theme === 'day' ? 'dial__text' : 'dial__text dial__text_view_dark'))
+      <p className={`${props.timer ?
+        (props.timerActive ?
+          (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_status_work_dark')
           :
-          (theme === 'day' ? 'dial__text' : 'dial__text text dial__text_view_dark')}
+          (theme === 'day' ? 'dial__text' : 'dial__text dial__text_view_dark'))
+        :
+        (theme === 'day' ? 'dial__text' : 'dial__text text dial__text_view_dark')}
           ${useActiveStyle && !props.timer && (theme === 'day' ? 'dial__text_view_day-hover' : 'dial__text_view_dark-hover')}`}
-          style={props.timerActive ? (props.inputStateActive ? {zIndex: '-5'} :  {zIndex: '5'})
+        style={props.timerActive ? (props.inputStateActive ? { zIndex: '-5' } : { zIndex: '5' })
           :
-          (props.inputStateActive ? {zIndex: '5'} :  {zIndex: '5'})
-          }
-          onMouseOver={() => changeActiveStyle(!useActiveStyle)}
-          onMouseLeave={() => changeActiveStyle(!useActiveStyle)}
-          onDoubleClick={handleClickText}>
-          {`${props.timeCount.minutes}:${props.timeCount.seconds}`}
-        </p>
-        <input className={`${props.timer ?
-          (props.timerActive ?
-            (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_status_work_dark')
-            :
-            (theme === 'day' ? 'dial__text' : 'dial__text dial__text_view_dark'))
+          (props.inputStateActive ? { zIndex: '5' } : { zIndex: '5' })
+        }
+        onMouseOver={() => changeActiveStyle(!useActiveStyle)}
+        onMouseLeave={() => changeActiveStyle(!useActiveStyle)}
+        onDoubleClick={handleClickText}>
+        {`${props.timeCount.minutes}:${props.timeCount.seconds}`}
+      </p>
+      <input className={`${props.timer ?
+        (props.timerActive ?
+          (theme === 'day' ? 'dial__text dial__text_status_work' : 'dial__text dial__text_status_work_dark')
           :
-          (theme === 'day' ? 'dial__text' : 'dial__text text dial__text_view_dark')}
-          ${(theme === 'day' ? 'dial__text_view_day-hover' : 'dial__text_view_dark-hover')}`}
-          style={props.timerActive && props.inputStateActive ? {zIndex: '5',  width: (5 + ref.current.value.split(':')[0].length) * 33 + 'px'/*, textAlign: 'center' */} : {zIndex: '-5'/*,  width: (6 + 1) * 33 + 'px', textAlign: 'center' */}}
-          value={inputValue}
-          ref={ref}
-          onChange={(e) => changeInputValue(e)}
-          onKeyDown={(e) => onKeyEnter(e)}/>
+          (theme === 'day' ? 'dial__text dial__input' : 'dial__text dial__text_view_dark dial__input_dark'))
+        :
+        (theme === 'day' ? 'dial__text dial__input' : 'dial__text dial__text_view_dark dial__input_dark')}
+          ${(theme === 'day' ? 'dial__text dial__input' : 'dial__text dial__text_view_dark dial__input_dark ')}`}
+        style={props.timerActive && props.inputStateActive ? { zIndex: '5', width: (4 + ref.current.value.split(':')[0].length) * 34 + 'px'/*, textAlign: 'center' */ } : { zIndex: '-5'/*,  width: (6 + 1) * 33 + 'px', textAlign: 'center' */ }}
+        value={inputValue}
+        ref={ref}
+        onChange={(e) => changeInputValue(e)}
+        onKeyDown={(e) => onKeyEnter(e)} />
     </div>
   )
 }

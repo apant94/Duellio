@@ -9,15 +9,7 @@
   cursor: pointer;
 }
 
-.dial_view_day-hover {
-  background: #F5F5F6;
-}
-
-.dial_view_dark {
-  background: #2B2D33;
-}
-
-.dial_view_dark-hover {
+.dial_dark {
   background: #2B2D33;
 }
 
@@ -67,25 +59,18 @@
   background: #22BACB1A;
 }
 
-.dial__text_view_day-hover {
-  padding: 20px;
-  background-color: #FFF;
-  border: 1px solid #22BACB;
-  box-shadow: inset 0px 0px 5px rgba(19, 50, 78, 0.5);
-  border-radius: 16px;
+.dial__text:hover {
+  font-size: 67px;
+  border-bottom: 3px solid #2B2D33;
 }
 
 .dial__text_view_dark {
   color: #FFF;
 }
 
-.dial__text_view_dark-hover {
-  padding: 20px;
-  background: #F5F5F6;
-  border: 1px solid #22BACB;
-  box-shadow: inset 0px 0px 5px rgba(19, 50, 78, 0.5);
-  border-radius: 16px;
-  color: #2B2D33;
+.dial__text_view_dark:hover {
+  font-size: 67px;
+  border-bottom: 3px solid #FFF;
 }
 
 .dial__text_status_work {
@@ -94,4 +79,14 @@
 
 .dial__text_status_work_dark {
   color: #2B2D33;
+}
+
+.dial__input {
+  font-size: 67px;
+  border-bottom: 3px solid #2B2D33;
+}
+
+.dial__input_dark {
+  font-size: 67px;
+  border-bottom: 3px solid #FFF;
 }

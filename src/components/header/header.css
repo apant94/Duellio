@@ -17,3 +17,10 @@
 .header__title_dark {
   color: #FFF;
 }
+
+@media all and (max-width: 1400px) {
+  .header {
+    margin: 0 auto 86px 100px;
+    padding-top: 36px;
+  }
+}
