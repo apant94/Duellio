@@ -63,7 +63,6 @@
 
 .clock__input::placeholder {
   color: #2B2D33;
-  /*background: #F5F5F6;*/
 }
 
 .clock__input_dark {
@@ -96,7 +95,6 @@
   gap: 24px;
   margin-top: 36px;
   width: 100%;
-  margin-bottom: 60px;
 }
 
 .clock__button-main {
@@ -211,4 +209,51 @@
   background-image: url('../../images/sun_active.svg');
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media all and (max-width: 1280px) {
+  .clock {
+    padding: 0 72px;
+    width: 579px;
+    height: 500px;
+    box-shadow: 0px 0.725px 11.6px rgba(16, 40, 84, 0.06);
+    border-radius: 30px;
+  }
+
+  .clock__input {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .clock__container-date {
+    gap: 16px 22px;
+    margin-top: 44px;
+  }
+
+  .clock__container-button {
+    gap: 16px;
+    margin-top: 26px;
+  }
+
+  .clock__button-main {
+    height: 44px;
+    border-radius: 26px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .clock__button-mini {
+    height: 44px;
+    font-size: 17px;
+    line-height: 20px;
+    background-size: 19.57px 19.57px;
+  }
+
+  .clock__button-mini_image_moon:active {
+    background-size: 19.57px 19.57px;
+  }
+
+  .clock__button-mini_image_sun:active {
+    background-size: 19.57px 19.57px;
+  }
 }
