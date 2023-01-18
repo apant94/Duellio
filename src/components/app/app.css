@@ -9,38 +9,84 @@
   background: #2B2D33;
 }
 
-.app__end-animation {
-  animation-duration: 4s;
+.app__background-animation {
+  animation-duration: 5s;
   animation-timing-function: linear;
   animation-name: background-change;
+}
+
+.app__background-animation_dark {
+  animation-name: background-change-dark;
 }
 
 @keyframes background-change {
   0% {
     background: #F5F5F6;
   }
-  12.5% {
-    background: #D7D9DF;
-  }
-  25% {
+  10% {
     background: #F5F5F6;
   }
-  37.5% {
+  20% {
+    background: #D7D9DF;
+  }
+  30% {
+    background: #F5F5F6;
+  }
+  40% {
     background: #D7D9DF;
   }
   50% {
     background: #F5F5F6;
   }
-  62.5% {
+  60% {
     background: #D7D9DF;
   }
-  75% {
+  70% {
     background: #F5F5F6;
   }
-  87.5% {
+  80% {
     background: #D7D9DF;
+  }
+  90% {
+    background: #F5F5F6;
   }
   100% {
     background: #F5F5F6;
+  }
+}
+
+@keyframes background-change-dark {
+  0% {
+    background: #2B2D33;
+  }
+  10% {
+    background: #2B2D33;
+  }
+  20% {
+    background: #454753;
+  }
+  30% {
+    background: #2B2D33;
+  }
+  40% {
+    background: #454753;
+  }
+  50% {
+    background: #2B2D33;
+  }
+  60% {
+    background: #454753;
+  }
+  70% {
+    background: #2B2D33;
+  }
+  80% {
+    background: #454753;
+  }
+  90% {
+    background: #2B2D33;
+  }
+  100% {
+    background: #2B2D33;
   }
 }

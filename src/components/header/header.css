@@ -29,4 +29,22 @@
   .header {
     margin: 0 auto 86px 40px;
   }
+
+  .header__title {
+    font-size: 22px;
+    line-height: 28px;
+    font-feature-settings: 'tnum' on, 'lnum' on, 'ss03' on, 'cv02' on, 'ss02' on, 'liga' off;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .header {
+    margin: 0 auto 70px 40px;
+    padding-top: 20px;
+  }
+
+  .header__title {
+    font-size: 16px;
+    line-height: 28px;
+  }
 }

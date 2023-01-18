@@ -161,16 +161,16 @@ const Clock = (props) => {
   return (
     <section className={theme === 'day' ? (props.useTimeLeft > 5 ? 'clock' : 'clock ') : 'clock clock_dark'}>
       <div className='clock__container-date'>
-        {
+        {/* прописать ширину инпутов зависящую от ширины экрана / второй текст(2-х этажный) */
           inputPlayerOne ?
             <input maxLength='20' placeholder={placeholderOne} value={valueOne}
               className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
-              style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px' }}
+              style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px'}}
               onChange={(e) => changeValueOne(e.target.value)}
               onKeyDown={(e) => onKeyEnterOne(e)} />
             :
             <p className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
-              style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px' }}
+              style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px'}}
               onDoubleClick={writePlayerOne}>
               {valueOne.length === 0 ? placeholderOne : valueOne}
             </p>

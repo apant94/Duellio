@@ -1,71 +1,35 @@
 @font-face {
-  font-family: 'SF UI Text';
-  src: url('SFUIText-LightItalic.eot');
-  src: local('SF UI Text LightItalic'), local('SFUIText-LightItalic'),
-      url('SFUIText-LightItalic.eot?#iefix') format('embedded-opentype'),
-      url('SFUIText-LightItalic.woff2') format('woff2'),
-      url('SFUIText-LightItalic.woff') format('woff'),
-      url('SFUIText-LightItalic.ttf') format('truetype');
-  font-weight: 200;
-  font-style: italic;
-}
-
-@font-face {
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Regular.eot');
   src: local('SF UI Display Regular'), local('SFUIDisplay-Regular'),
-      url('SFUIDisplay-Regular.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Regular.woff2') format('woff2'),
       url('SFUIDisplay-Regular.woff') format('woff'),
-      url('SFUIDisplay-Regular.ttf') format('truetype');
+      url('SFUIDisplay-Regular.ttf') format('truetype'),
+      url('SFUIDisplay-Regular.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'SF UI Text';
-  src: url('SFUIText-RegularItalic.eot');
-  src: local('SF UI Text Regular Italic'), local('SFUIText-RegularItalic'),
-      url('SFUIText-RegularItalic.eot?#iefix') format('embedded-opentype'),
-      url('SFUIText-RegularItalic.woff2') format('woff2'),
-      url('SFUIText-RegularItalic.woff') format('woff'),
-      url('SFUIText-RegularItalic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
 }
 
 @font-face {
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Ultralight.eot');
   src: local('SF UI Display Ultralight'), local('SFUIDisplay-Ultralight'),
-      url('SFUIDisplay-Ultralight.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Ultralight.woff2') format('woff2'),
       url('SFUIDisplay-Ultralight.woff') format('woff'),
-      url('SFUIDisplay-Ultralight.ttf') format('truetype');
+      url('SFUIDisplay-Ultralight.ttf') format('truetype'),
+      url('SFUIDisplay-Ultralight.eot?#iefix') format('embedded-opentype');
   font-weight: 200;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'SF UI Text';
-  src: url('SFUIText-SemiboldItalic.eot');
-  src: local('SF UI Text SemiboldItalic'), local('SFUIText-SemiboldItalic'),
-      url('SFUIText-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
-      url('SFUIText-SemiboldItalic.woff2') format('woff2'),
-      url('SFUIText-SemiboldItalic.woff') format('woff'),
-      url('SFUIText-SemiboldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
 }
 
 @font-face {
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Heavy.eot');
   src: local('SF UI Display Heavy'), local('SFUIDisplay-Heavy'),
-      url('SFUIDisplay-Heavy.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Heavy.woff2') format('woff2'),
       url('SFUIDisplay-Heavy.woff') format('woff'),
-      url('SFUIDisplay-Heavy.ttf') format('truetype');
+      url('SFUIDisplay-Heavy.ttf') format('truetype'),
+      url('SFUIDisplay-Heavy.eot?#iefix') format('embedded-opentype');
   font-weight: 900;
   font-style: normal;
 }
@@ -74,10 +38,10 @@
   font-family: 'SF UI Text';
   src: url('SFUIText-Heavy.eot');
   src: local('SF UI Text Heavy'), local('SFUIText-Heavy'),
-      url('SFUIText-Heavy.eot?#iefix') format('embedded-opentype'),
       url('SFUIText-Heavy.woff2') format('woff2'),
       url('SFUIText-Heavy.woff') format('woff'),
-      url('SFUIText-Heavy.ttf') format('truetype');
+      url('SFUIText-Heavy.ttf') format('truetype'),
+      url('SFUIText-Heavy.eot?#iefix') format('embedded-opentype');
   font-weight: 900;
   font-style: normal;
 }
@@ -86,10 +50,10 @@
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Black.eot');
   src: local('SF UI Display Black'), local('SFUIDisplay-Black'),
-      url('SFUIDisplay-Black.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Black.woff2') format('woff2'),
       url('SFUIDisplay-Black.woff') format('woff'),
-      url('SFUIDisplay-Black.ttf') format('truetype');
+      url('SFUIDisplay-Black.ttf') format('truetype'),
+      url('SFUIDisplay-Black.eot?#iefix') format('embedded-opentype');
   font-weight: 900;
   font-style: normal;
 }
@@ -98,10 +62,10 @@
   font-family: 'SF UI Text';
   src: url('SFUIText-Semibold.eot');
   src: local('SF UI Text Semibold'), local('SFUIText-Semibold'),
-      url('SFUIText-Semibold.eot?#iefix') format('embedded-opentype'),
       url('SFUIText-Semibold.woff2') format('woff2'),
       url('SFUIText-Semibold.woff') format('woff'),
-      url('SFUIText-Semibold.ttf') format('truetype');
+      url('SFUIText-Semibold.ttf') format('truetype'),
+      url('SFUIText-Semibold.eot?#iefix') format('embedded-opentype');
   font-weight: 600;
   font-style: normal;
 }
@@ -110,10 +74,10 @@
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Semibold.eot');
   src: local('SF UI Display Semibold'), local('SFUIDisplay-Semibold'),
-      url('SFUIDisplay-Semibold.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Semibold.woff2') format('woff2'),
       url('SFUIDisplay-Semibold.woff') format('woff'),
-      url('SFUIDisplay-Semibold.ttf') format('truetype');
+      url('SFUIDisplay-Semibold.ttf') format('truetype'),
+      url('SFUIDisplay-Semibold.eot?#iefix') format('embedded-opentype');
   font-weight: 600;
   font-style: normal;
 }
@@ -122,10 +86,10 @@
   font-family: 'SF UI Text';
   src: url('SFUIText-Medium.eot');
   src: local('SF UI Text Medium'), local('SFUIText-Medium'),
-      url('SFUIText-Medium.eot?#iefix') format('embedded-opentype'),
       url('SFUIText-Medium.woff2') format('woff2'),
       url('SFUIText-Medium.woff') format('woff'),
-      url('SFUIText-Medium.ttf') format('truetype');
+      url('SFUIText-Medium.ttf') format('truetype'),
+      url('SFUIText-Medium.eot?#iefix') format('embedded-opentype');
   font-weight: 500;
   font-style: normal;
 }
@@ -134,10 +98,10 @@
   font-family: 'SF UI Text';
   src: url('SFUIText-Light.eot');
   src: local('SF UI Text Light'), local('SFUIText-Light'),
-      url('SFUIText-Light.eot?#iefix') format('embedded-opentype'),
       url('SFUIText-Light.woff2') format('woff2'),
       url('SFUIText-Light.woff') format('woff'),
-      url('SFUIText-Light.ttf') format('truetype');
+      url('SFUIText-Light.ttf') format('truetype'),
+      url('SFUIText-Light.eot?#iefix') format('embedded-opentype');
   font-weight: 200;
   font-style: normal;
 }
@@ -146,10 +110,10 @@
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Bold.eot');
   src: local('SF UI Display Bold'), local('SFUIDisplay-Bold'),
-      url('SFUIDisplay-Bold.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Bold.woff2') format('woff2'),
       url('SFUIDisplay-Bold.woff') format('woff'),
-      url('SFUIDisplay-Bold.ttf') format('truetype');
+      url('SFUIDisplay-Bold.ttf') format('truetype'),
+      url('SFUIDisplay-Bold.eot?#iefix') format('embedded-opentype');
   font-weight: bold;
   font-style: normal;
 }
@@ -158,10 +122,10 @@
   font-family: 'SF UI Text';
   src: url('SFUIText-Regular.eot');
   src: local('SF UI Text Regular'), local('SFUIText-Regular'),
-      url('SFUIText-Regular.eot?#iefix') format('embedded-opentype'),
       url('SFUIText-Regular.woff2') format('woff2'),
       url('SFUIText-Regular.woff') format('woff'),
-      url('SFUIText-Regular.ttf') format('truetype');
+      url('SFUIText-Regular.ttf') format('truetype'),
+      url('SFUIText-Regular.eot?#iefix') format('embedded-opentype');
   font-weight: normal; /* 400 */
   font-style: normal;
 }
@@ -170,24 +134,12 @@
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Thin.eot');
   src: local('SF UI Display Thin'), local('SFUIDisplay-Thin'),
-      url('SFUIDisplay-Thin.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Thin.woff2') format('woff2'),
       url('SFUIDisplay-Thin.woff') format('woff'),
-      url('SFUIDisplay-Thin.ttf') format('truetype');
+      url('SFUIDisplay-Thin.ttf') format('truetype'),
+      url('SFUIDisplay-Thin.eot?#iefix') format('embedded-opentype');
   font-weight: 100;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'SF UI Text';
-  src: url('SFUIText-BoldItalic.eot');
-  src: local('SF UI Text BoldItalic'), local('SFUIText-BoldItalic'),
-      url('SFUIText-BoldItalic.eot?#iefix') format('embedded-opentype'),
-      url('SFUIText-BoldItalic.woff2') format('woff2'),
-      url('SFUIText-BoldItalic.woff') format('woff'),
-      url('SFUIText-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
 }
 
 @font-face {
@@ -197,7 +149,8 @@
       url('SFUIText-Bold.eot?#iefix') format('embedded-opentype'),
       url('SFUIText-Bold.woff2') format('woff2'),
       url('SFUIText-Bold.woff') format('woff'),
-      url('SFUIText-Bold.ttf') format('truetype');
+      url('SFUIText-Bold.ttf') format('truetype'),
+      url('SFUIText-Bold.eot?#iefix') format('embedded-opentype');
   font-weight: bold;
   font-style: normal;
 }
@@ -206,46 +159,22 @@
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Medium.eot');
   src: local('SF UI Display Medium'), local('SFUIDisplay-Medium'),
-      url('SFUIDisplay-Medium.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Medium.woff2') format('woff2'),
       url('SFUIDisplay-Medium.woff') format('woff'),
-      url('SFUIDisplay-Medium.ttf') format('truetype');
+      url('SFUIDisplay-Medium.ttf') format('truetype'),
+      url('SFUIDisplay-Medium.eot?#iefix') format('embedded-opentype');
   font-weight: 500;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'SF UI Text';
-  src: url('SFUIText-HeavyItalic.eot');
-  src: local('SF UI Text HeavyItalic'), local('SFUIText-HeavyItalic'),
-      url('SFUIText-HeavyItalic.eot?#iefix') format('embedded-opentype'),
-      url('SFUIText-HeavyItalic.woff2') format('woff2'),
-      url('SFUIText-HeavyItalic.woff') format('woff'),
-      url('SFUIText-HeavyItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
 }
 
 @font-face {
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Light.eot');
   src: local('SF UI Display Light'), local('SFUIDisplay-Light'),
-      url('SFUIDisplay-Light.eot?#iefix') format('embedded-opentype'),
       url('SFUIDisplay-Light.woff2') format('woff2'),
       url('SFUIDisplay-Light.woff') format('woff'),
-      url('SFUIDisplay-Light.ttf') format('truetype');
+      url('SFUIDisplay-Light.ttf') format('truetype'),
+      url('SFUIDisplay-Light.eot?#iefix') format('embedded-opentype');
   font-weight: 200;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'SF UI Text';
-  src: url('SFUIText-MediumItalic.eot');
-  src: local('SF UI Text MediumItalic'), local('SFUIText-MediumItalic'),
-      url('SFUIText-MediumItalic.eot?#iefix') format('embedded-opentype'),
-      url('SFUIText-MediumItalic.woff2') format('woff2'),
-      url('SFUIText-MediumItalic.woff') format('woff'),
-      url('SFUIText-MediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
 }

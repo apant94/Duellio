@@ -105,9 +105,9 @@ function App() {
     setUseTimer(bool)
   }
 
-  return (
+  return ( /* разбить анимацию под каждый блок */ /* сделать перезапись при изменении времени */ /* проверить ховеры на тёмной теме */
     <div className={`
-    ${useTheme === 'day' ? 'app' : 'app app_dark'}`}
+    ${useTheme === 'day' ? (useTimeLeft <= 5 || useTimeRight <= 5 ? 'app app__background-animation' : 'app') : (useTimeLeft <= 5 || useTimeRight <= 5 ? 'app app_dark app__background-animation app__background-animation_dark' : 'app app_dark')}`}
       onClick={() => changeInputStateClick(false)}>
       <ThemeContext.Provider value={useTheme}>
         <Header />
