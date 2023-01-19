@@ -23,7 +23,7 @@
   border: 3px solid #F5F5F6;
 }
 
-.dial_active_dark { /* двойной модификатор */
+.dial_active_dark {
   border: 3px solid #F5F5F6;
 }
 
@@ -103,6 +103,10 @@
     height: 170px;
   }
 
+  .dial_active_dark {
+    border: 2px solid #F5F5F6;
+  }
+
   .dial__text {
     font-size: 50px;
     line-height: 60px;
@@ -136,6 +140,10 @@
     height: calc(136px - 1.5544px - 1.5544px);
   }
 
+  .dial_active_dark {
+    border: 1.5544px solid #F5F5F6;
+  }
+
   .dial__text {
     font-size: 40px;
     line-height: 48px;
@@ -151,5 +159,51 @@
   
   .dial__input_dark {
     font-size: 38px;
+  }
+
+  @media (width: 1024px) and (height: 1336px) { /* iPad Pro 12.9 */
+    .dial {
+      height: 240px;
+      border-radius: 36px;
+    }
+    
+    .dial_active {
+      border: 3px solid #22BACB;
+      width: calc(100% - 6px);
+      height: 234px;
+    }
+    
+    .dial:hover .clock__dial_active {
+      border: 3px solid #F5F5F6;
+    }
+    
+    .dial_active_dark {
+      border: 3px solid #F5F5F6;
+    }
+    
+    .dial__text {
+      font-size: 70px;
+      line-height: 84px;
+    }
+    
+    .dial__text:hover {
+      font-size: 67px;
+      border-bottom: 3px solid #2B2D33;
+    }
+    
+    .dial__text_view_dark:hover {
+      font-size: 67px;
+      border-bottom: 3px solid #FFF;
+    }
+    
+    .dial__input {
+      font-size: 67px;
+      border-bottom: 3px solid #2B2D33;
+    }
+    
+    .dial__input_dark {
+      font-size: 67px;
+      border-bottom: 3px solid #FFF;
+    }
   }
 }

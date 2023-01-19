@@ -304,4 +304,102 @@
   .clock__button-mini_image_sun:active {
     background-size: 15.21px 15.21px;
   }
+
+  @media (width: 1024px) and (height: 1336px) { /* iPad Pro 12.9 */
+    .clock {
+      padding: 0 100px;
+      width: 600px;
+      height: 693px;
+      border-radius: 40px;
+    }
+    
+    .clock__container-date {
+      gap: 24px 32px;
+      margin-top: 60px;
+    }
+    
+    .clock__input {
+      padding: 12px 20px;
+      font-size: 28px;
+      line-height: 33px;
+      font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+    }
+    
+    .clock__input:hover {
+      box-shadow: inset 0px 0px 2px rgba(19, 50, 78, 0.2);
+      border-radius: 16px;
+    }
+    
+    .clock__container-button {
+      gap: 24px;
+      margin-top: 36px;
+    }
+    
+    .clock__button-main {
+      height: 60px;
+      border-radius: 28px;
+      font-size: 28px;
+      line-height: 33px;
+    }
+    
+    .clock__button-main:hover {
+      box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
+    }
+    
+    .clock__button-main_dark:hover {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
+    }
+    
+    .clock__button-mini {
+      height: 60px;
+      font-size: 24px;
+      line-height: 29px;
+      font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+      border-radius: 28px;
+    }
+    
+    .clock__button-mini:hover {
+      box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
+    }
+    
+    .clock__button-mini:active {
+      box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
+    }
+    
+    .clock__button-mini_dark:active {
+      box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
+    }
+    
+    .clock__button-mini_dark:hover {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
+    }
+    
+    .clock__button-mini_image_moon {
+      background-image: url('../../images/moon.svg');
+      background-size: 27px 27px;
+    }
+    
+    .clock__button-mini_image_moon:hover {
+      box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
+    }
+    
+    .clock__button-mini_image_moon:active {
+      background-image: url('../../images/moon_active.svg');
+      background-size: 27px 27px;
+    }
+    
+    .clock__button-mini_image_sun {
+      background-image: url('../../images/sun.svg');
+      background-size: 27px 27px;
+    }
+    
+    .clock__button-mini_image_sun:hover {
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
+    }
+    
+    .clock__button-mini_image_sun:active {
+      background-image: url('../../images/sun_active.svg');
+      background-size: 27px 27px;
+    }
+  }
 }
