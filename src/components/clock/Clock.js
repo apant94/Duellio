@@ -193,6 +193,7 @@ const Clock = (props) => {
           timer={props.useTimer}
           timerActive={props.useTimerLeftActive}
           timeCount={useTimeLeftCount}
+          useTimeLeft={props.useTimeLeft}
           modifier='left'
           choice={choiceDial}
           setTheTime={setTheTime}
@@ -203,6 +204,7 @@ const Clock = (props) => {
           timer={props.useTimer}
           timerActive={props.useTimerRightActive}
           timeCount={useTimeRightCount}
+          useTimeRight={props.useTimeRight}
           modifier='right'
           choice={choiceDial}
           setTheTime={setTheTime}

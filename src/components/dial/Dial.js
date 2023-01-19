@@ -80,7 +80,10 @@ const Dial = (props) => {
   return (
     <div className={`${props.timer ?
       (props.timerActive ?
-        (theme === 'day' ? 'dial dial_status_work' : 'dial dial_dark dial_status_work dial_status_work_dark')
+        (theme === 'day' ?
+          (props.useTimeLeft <= 5 || props.useTimeRight <= 5 ? 'dial dial_status_work dial_status_work-animation' : 'dial dial_status_work')
+          :
+          (props.useTimeLeft <= 5 || props.useTimeRight <= 5 ? 'dial dial_dark dial_status_work dial_status_work_dark dial_status_work_dark-animation' : 'dial dial_dark dial_status_work dial_status_work_dark'))
         :
         (theme === 'day' ? 'dial' : 'dial dial_dark'))
       :

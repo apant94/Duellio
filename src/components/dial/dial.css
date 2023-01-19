@@ -31,8 +31,20 @@
   background: #22BACB;
 }
 
+.dial_status_work-animation {
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-name: dial-change;
+}
+
 .dial_status_work_dark {
   background: #99E2EA;
+}
+
+.dial_status_work_dark-animation {
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-name: dial-change-dark;
 }
 
 .dial__text {
@@ -89,6 +101,78 @@
 .dial__input_dark {
   font-size: 67px;
   border-bottom: 3px solid #FFF;
+}
+
+@keyframes dial-change {
+  0% {
+    background: #22BACB;
+  }
+  10% {
+    background: #22BACB;
+  }
+  20% {
+    background: #22BACB;
+  }
+  30% {
+    background: #454753;
+  }
+  40% {
+    background: #22BACB;
+  }
+  50% {
+    background: #454753;
+  }
+  60% {
+    background: #22BACB;
+  }
+  70% {
+    background: #454753;
+  }
+  80% {
+    background: #22BACB;
+  }
+  90% {
+    background: #454753;
+  }
+  100% {
+    background: #FFF;
+  }
+}
+
+@keyframes dial-change-dark {
+  0% {
+    background: #2B2D33;
+  }
+  10% {
+    background: #99E2EA;
+  }
+  20% {
+    background: #99E2EA;
+  }
+  30% {
+    background: #FFFFFF;
+  }
+  40% {
+    background: #99E2EA;
+  }
+  50% {
+    background: #FFFFFF;
+  }
+  60% {
+    background: #99E2EA;
+  }
+  70% {
+    background: #FFFFFF;
+  }
+  80% {
+    background: #99E2EA;
+  }
+  90% {
+    background: #FFFFFF;
+  }
+  100% {
+    background: #2B2D33;
+  }
 }
 
 @media all and (max-width: 1280px) { /* разобрать активно-пассивные*/
