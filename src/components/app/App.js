@@ -54,10 +54,10 @@ function App() {
   }, [useTimeLeft, useTimeRight, useTimer, useTimerSoundLeftStart, useTimerSoundRightStart, pauseOne, pauseTwo]);
 
   useEffect(() => {
-    if(useTimerSoundLeftStart && useTimer && useTimerLeftActive){
+    if (useTimerSoundLeftStart && useTimer && useTimerLeftActive) {
       playLeft();
     }
-    if(useTimerSoundRightStart && useTimer && useTimerRightActive){
+    if (useTimerSoundRightStart && useTimer && useTimerRightActive) {
       playRight();
     }
   }, [playLeft, playRight, useTimer, useTimerLeftActive, useTimerRightActive, useTimerSoundLeftStart, useTimerSoundRightStart]);
@@ -105,30 +105,35 @@ function App() {
     setUseTimer(bool)
   }
 
-  return ( /* разбить анимацию под каждый блок */ /* сделать перезапись при изменении времени */ /* проверить ховеры на тёмной теме */
-    <div className={`
-    ${useTheme === 'day' ? (useTimeLeft <= 5 || useTimeRight <= 5 ? 'app app__background-animation' : 'app') : (useTimeLeft <= 5 || useTimeRight <= 5 ? 'app app_dark app__background-animation app__background-animation_dark' : 'app app_dark')}`}
-      onClick={() => changeInputStateClick(false)}>
-      <ThemeContext.Provider value={useTheme}>
-        <Header />
-        <Clock
-          changeTheme={changeTheme}
-          timeChange={timeChange}
-          useTimer={useTimer}
-          changeTimerStart={changeTimerStart}
+  return (
+    <div className={`${useTheme === 'day' ? 'app' : 'app app_dark'}`}
+      style={
+        ((useTimeLeft <= 5 && useTimerLeftActive) || (useTimeRight <= 5 && useTimerRightActive))
+          && useTimer ? { animationPlayState: 'running' }
+          :
+          (useTheme === 'day' ? { background: '#F5F5F6', animationPlayState: 'paused'} : {animationPlayState: 'paused', background: '#2B2D33'})
+         }
+onClick = {() => changeInputStateClick(false)}>
+  <ThemeContext.Provider value={useTheme}>
+    <Header />
+    <Clock
+      changeTheme={changeTheme}
+      timeChange={timeChange}
+      useTimer={useTimer}
+      changeTimerStart={changeTimerStart}
 
-          useTimeLeft={useTimeLeft}
-          useTimerLeftActive={useTimerLeftActive}
-          useTimeRight={useTimeRight}
-          useTimerRightActive={useTimerRightActive}
-          changeTimerActive={changeTimerActive}
-          changeTimerActiveWithParams={changeTimerActiveWithParams}
+      useTimeLeft={useTimeLeft}
+      useTimerLeftActive={useTimerLeftActive}
+      useTimeRight={useTimeRight}
+      useTimerRightActive={useTimerRightActive}
+      changeTimerActive={changeTimerActive}
+      changeTimerActiveWithParams={changeTimerActiveWithParams}
 
-          inputStateActive={inputState}
-          changeInputStateClick={changeInputStateClick} />
-          <Footer />
-      </ThemeContext.Provider>
-    </div>
+      inputStateActive={inputState}
+      changeInputStateClick={changeInputStateClick} />
+    <Footer />
+  </ThemeContext.Provider>
+    </div >
   );
 }
 

@@ -305,7 +305,7 @@
     background-size: 15.21px 15.21px;
   }
 
-  @media (width: 1024px) and (height: 1336px) { /* iPad Pro 12.9 */
+  @media (width: 1024px) and (height: 1366px) { /* iPad Pro 12.9 */
     .clock {
       padding: 0 100px;
       width: 600px;

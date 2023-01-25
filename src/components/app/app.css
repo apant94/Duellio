@@ -3,19 +3,14 @@
   height: 100vh;
   width: 100%;
   background: #F5F5F6;
-}
-
-.app_dark {
-  background: #2B2D33;
-}
-
-.app__background-animation {
   animation-duration: 5s;
+  animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: background-change;
 }
 
-.app__background-animation_dark {
+.app_dark {
+  background: #2B2D33;
   animation-name: background-change-dark;
 }
 

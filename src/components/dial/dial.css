@@ -29,21 +29,14 @@
 
 .dial_status_work {
   background: #22BACB;
-}
-
-.dial_status_work-animation {
   animation-duration: 5s;
+  animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: dial-change;
 }
 
 .dial_status_work_dark {
   background: #99E2EA;
-}
-
-.dial_status_work_dark-animation {
-  animation-duration: 5s;
-  animation-timing-function: linear;
   animation-name: dial-change-dark;
 }
 
@@ -245,7 +238,7 @@
     font-size: 38px;
   }
 
-  @media (width: 1024px) and (height: 1336px) { /* iPad Pro 12.9 */
+  @media (width: 1024px) and (height: 1366px) { /* iPad Pro 12.9 */
     .dial {
       height: 240px;
       border-radius: 36px;

@@ -48,7 +48,7 @@
     line-height: 28px;
   }
 
-  @media (width: 1024px) and (height: 1336px) { /* iPad Pro 12.9 */
+  @media (width: 1024px) and (height: 1366px) { /* iPad Pro 12.9 */
     .header {
       margin: 0 auto 86px 40px;
       padding-top: 36px;

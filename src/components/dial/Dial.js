@@ -80,10 +80,7 @@ const Dial = (props) => {
   return (
     <div className={`${props.timer ?
       (props.timerActive ?
-        (theme === 'day' ?
-          (props.useTimeLeft <= 5 || props.useTimeRight <= 5 ? 'dial dial_status_work dial_status_work-animation' : 'dial dial_status_work')
-          :
-          (props.useTimeLeft <= 5 || props.useTimeRight <= 5 ? 'dial dial_dark dial_status_work dial_status_work_dark dial_status_work_dark-animation' : 'dial dial_dark dial_status_work dial_status_work_dark'))
+        (theme === 'day' ? 'dial dial_status_work' : 'dial dial_dark dial_status_work dial_status_work_dark')
         :
         (theme === 'day' ? 'dial' : 'dial dial_dark'))
       :
@@ -91,6 +88,12 @@ const Dial = (props) => {
         (theme === 'day' ? 'dial dial_active' : 'dial dial_dark dial_active dial_active_dark')
         :
         (theme === 'day' ? 'dial' : 'dial dial_dark'))}`}
+      style={
+        ((props.useTimeLeft <= 5 && props.timerActive) || (props.useTimeRight <= 5 && props.timerActive))
+          && props.timer ? { animationPlayState: 'running' }
+          :
+          { animationPlayState: 'paused' }
+      }
       onClick={(e) => props.choice(e, props.modifier)}>
       <p className={`${props.timer ?
         (props.timerActive ?
