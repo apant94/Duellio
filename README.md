@@ -1,4 +1,4 @@
-# Negotiation-club
+# Duellio
 
 ## Описание:
 
