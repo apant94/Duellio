@@ -18,6 +18,14 @@
   color: #FFF;
 }
 
+.header__menu {
+
+}
+
+.header__menu-list {
+  
+}
+
 @media all and (max-width: 1400px) {
   .header {
     margin: 0 auto 86px 100px;
@@ -57,5 +65,19 @@
     .header__title {
       font-size: 22px;
     }
+  }
+}
+
+/* Phone 14 Pro Max */
+
+@media all and (max-width: 430px) {
+  .header {
+    margin: 0 auto 20px 20px;
+    padding-top: 20px;
+  }
+
+  .header__title {
+    font-size: 16px;
+    line-height: 28px;
   }
 }

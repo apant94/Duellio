@@ -164,12 +164,12 @@ const Clock = (props) => {
         {/* прописать ширину инпутов зависящую от ширины экрана / второй текст(2-х этажный) */
           inputPlayerOne ?
             <input maxLength='20' placeholder={placeholderOne} value={valueOne}
-              className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+              className={theme === 'day' ? 'clock__input clock__input_one' : 'clock__input clock__input_one clock__input_dark'}
               style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px'}}
               onChange={(e) => changeValueOne(e.target.value)}
               onKeyDown={(e) => onKeyEnterOne(e)} />
             :
-            <p className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+            <p className={theme === 'day' ? 'clock__input clock__input_one' : 'clock__input clock__input_one clock__input_dark'}
               style={{ width: valueOne.length < placeholderOne.length ? ((placeholderOne.length + 1) * 15) + 'px' : ((valueOne.length + 1) * 15) + 'px'}}
               onDoubleClick={writePlayerOne}>
               {valueOne.length === 0 ? placeholderOne : valueOne}
@@ -178,12 +178,12 @@ const Clock = (props) => {
         {
           inputPlayerTwo ?
             <input maxLength='20' placeholder={placeholderTwo} value={valueTwo}
-              className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+              className={theme === 'day' ? 'clock__input clock__input_two' : 'clock__input clock__input_two clock__input_dark'}
               style={{ width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px' }}
               onChange={(e) => changeValueTwo(e.target.value)}
               onKeyDown={(e) => onKeyEnterTwo(e)} />
             :
-            <p className={theme === 'day' ? 'clock__input' : 'clock__input clock__input_dark'}
+            <p className={theme === 'day' ? 'clock__input clock__input_two' : 'clock__input clock__input_two clock__input_dark'}
               style={{ width: valueTwo.length < placeholderTwo.length ? ((placeholderTwo.length + 1) * 15) + 'px' : ((valueTwo.length + 1) * 15) + 'px' }}
               onDoubleClick={writePlayerTwo}>
               {valueTwo.length === 0 ? placeholderTwo : valueTwo}

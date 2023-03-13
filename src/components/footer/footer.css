@@ -17,3 +17,11 @@
     }
   }
 }
+
+/* Phone 14 Pro Max */
+
+@media all and (max-width: 430px) {
+  .footer {
+    height: 68px;
+  }
+}

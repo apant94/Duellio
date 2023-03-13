@@ -283,4 +283,21 @@
       border-bottom: 3px solid #FFF;
     }
   }
+
+  /* Phone 14 Pro Max */
+
+  @media all and (max-width: 430px) {
+    .dial {
+      width: 100%;
+      border-radius: 26px;
+    }
+
+    .clock__dial_one {
+      grid-area: dialOne;
+    }
+
+    .clock__dial_two {
+      grid-area: dialTwo;
+    }
+  }
 }

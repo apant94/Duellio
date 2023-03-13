@@ -78,16 +78,29 @@ const Dial = (props) => {
   }
 
   return (
-    <div className={`${props.timer ?
-      (props.timerActive ?
-        (theme === 'day' ? 'dial dial_status_work' : 'dial dial_dark dial_status_work dial_status_work_dark')
+    <div className={`${props.modifier === "left" ?
+      props.timer ?
+        (props.timerActive ?
+          (theme === 'day' ? 'dial clock__dial_one dial_status_work' : 'dial clock__dial_one dial_dark dial_status_work dial_status_work_dark')
+          :
+          (theme === 'day' ? 'dial clock__dial_one' : 'dial clock__dial_one dial_dark'))
         :
-        (theme === 'day' ? 'dial' : 'dial dial_dark'))
+        (props.timerActive ?
+          (theme === 'day' ? 'dial clock__dial_one dial_active' : 'dial clock__dial_one dial_dark dial_active dial_active_dark')
+          :
+          (theme === 'day' ? 'dial clock__dial_one' : 'dial clock__dial_one dial_dark'))
       :
-      (props.timerActive ?
-        (theme === 'day' ? 'dial dial_active' : 'dial dial_dark dial_active dial_active_dark')
+      props.timer ?
+        (props.timerActive ?
+          (theme === 'day' ? 'dial clock__dial_two dial_status_work' : 'dial clock__dial_two dial_dark dial_status_work dial_status_work_dark')
+          :
+          (theme === 'day' ? 'dial clock__dial_two' : 'dial clock__dial_two dial_dark'))
         :
-        (theme === 'day' ? 'dial' : 'dial dial_dark'))}`}
+        (props.timerActive ?
+          (theme === 'day' ? 'dial clock__dial_two dial_active' : 'dial clock__dial_two dial_dark dial_active dial_active_dark')
+          :
+          (theme === 'day' ? 'dial clock__dial_two' : 'dial clock__dial_two dial_dark'))
+      }`}
       style={
         ((props.useTimeLeft <= 5 && props.timerActive) || (props.useTimeRight <= 5 && props.timerActive))
           && props.timer ? { animationPlayState: 'running' }

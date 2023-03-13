@@ -403,3 +403,40 @@
     }
   }
 }
+
+/* Phone 14 Pro Max */
+
+@media all and (max-width: 430px) {
+  .clock {
+    padding: 0;
+    width: 390px;
+    height: 736px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .clock__container-date {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px 32px;
+    margin-top: 60px;
+    width: 100%;
+    grid-template-areas:
+    "inputOne"
+    "dialOne"
+    "inputTwo"
+    "dialTwo";
+  }
+
+  .clock__input {
+    width: 100%;
+  }
+
+  .clock__input_one {
+    grid-area: inputOne;
+  }
+
+  .clock__input_two {
+    grid-area: inputTwo;
+  }
+}
