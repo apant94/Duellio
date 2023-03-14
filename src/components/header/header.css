@@ -1,5 +1,8 @@
 .header {
-  margin: 0 auto 124px 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 100px 124px;
   padding-top: 40px;
 }
 
@@ -23,7 +26,28 @@
 }
 
 .header__menu-list {
-  
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__link-item {
+  margin-right: 50px;
+}
+
+.header__link {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  color: #2B2D33;
+}
+
+.header__theme {
+
 }
 
 @media all and (max-width: 1400px) {

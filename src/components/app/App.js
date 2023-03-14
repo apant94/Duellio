@@ -1,6 +1,8 @@
 import './app.css';
 
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import { ThemeContext } from '../../contexts/ThemeContext';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
@@ -8,6 +10,7 @@ import Clock from '../clock/Clock';
 
 import useSound from 'use-sound'; // импорт звуков
 import endingSound from '../../sounds/Jukianas_club_timer_15_sec_2.mp3';
+import PageNotFound from '../pageNotFound/PageNotFound';
 
 function App() {
 
@@ -111,28 +114,40 @@ function App() {
         ((useTimeLeft <= 5 && useTimerLeftActive) || (useTimeRight <= 5 && useTimerRightActive))
           && useTimer ? { animationPlayState: 'running' }
           :
-          (useTheme === 'day' ? { background: '#F5F5F6', animationPlayState: 'paused'} : {animationPlayState: 'paused', background: '#2B2D33'})
-         }
-onClick = {() => changeInputStateClick(false)}>
-  <ThemeContext.Provider value={useTheme}>
-    <Header />
-    <Clock
-      changeTheme={changeTheme}
-      timeChange={timeChange}
-      useTimer={useTimer}
-      changeTimerStart={changeTimerStart}
+          (useTheme === 'day' ? { background: '#F5F5F6', animationPlayState: 'paused' } : { animationPlayState: 'paused', background: '#2B2D33' })
+      }
+      onClick={() => changeInputStateClick(false)}>
+      <ThemeContext.Provider value={useTheme}>
 
-      useTimeLeft={useTimeLeft}
-      useTimerLeftActive={useTimerLeftActive}
-      useTimeRight={useTimeRight}
-      useTimerRightActive={useTimerRightActive}
-      changeTimerActive={changeTimerActive}
-      changeTimerActiveWithParams={changeTimerActiveWithParams}
+        <Header />
 
-      inputStateActive={inputState}
-      changeInputStateClick={changeInputStateClick} />
-    <Footer />
-  </ThemeContext.Provider>
+        <Routes>
+          <Route path="/" element={
+            <Clock
+              changeTheme={changeTheme}
+              timeChange={timeChange}
+              useTimer={useTimer}
+              changeTimerStart={changeTimerStart}
+
+              useTimeLeft={useTimeLeft}
+              useTimerLeftActive={useTimerLeftActive}
+              useTimeRight={useTimeRight}
+              useTimerRightActive={useTimerRightActive}
+              changeTimerActive={changeTimerActive}
+              changeTimerActiveWithParams={changeTimerActiveWithParams}
+
+              inputStateActive={inputState}
+              changeInputStateClick={changeInputStateClick} />
+          } />
+          <Route path="/rules" element={'Правила'} />
+          <Route path="/cases" element={'Кейсы'} />
+          <Route path="/about" element={'О нас'} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+
+        <Footer />
+        
+      </ThemeContext.Provider>
     </div >
   );
 }
