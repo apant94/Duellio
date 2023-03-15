@@ -8,11 +8,11 @@
 
 * Project menedger
 * Designer
-* Tester
+* Tester * 2
 * Frontend
 * Backend
 
-Работу проекта можно увидеть на GitPage - [Clock](https://nikolaydolgov.github.io/negotiation-club/)
+Работу проекта можно увидеть на GitPage - [Clock](https://nikolayDF.github.io/Duellio/)
 
 ## Технологии на данный момент:
 
