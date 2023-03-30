@@ -139,9 +139,9 @@ function App() {
               inputStateActive={inputState}
               changeInputStateClick={changeInputStateClick} />
           } />
-          <Route path="/rules" element={'Правила'} />
-          <Route path="/cases" element={'Кейсы'} />
-          <Route path="/about" element={'О нас'} />
+          <Route path="/rules" element={<PageNotFound />} />
+          <Route path="/cases" element={<PageNotFound />} />
+          <Route path="/about" element={<PageNotFound />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
 

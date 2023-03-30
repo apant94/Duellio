@@ -6,7 +6,7 @@ import './pageNotFound.css';
 function PageNotFound () {
   return (
     <div className="not-found">
-      <Link className="button button_type_to-main" to="/">Перейти на главную</Link>
+      <Link className="not-found__link" to="/">Перейти на главную</Link>
     </div>
   )
 }

@@ -24,7 +24,7 @@ const Header = () => {
           <li class="header__link-item">
             <Link to="/about" class="header__link">О нас</Link>
           </li>
-          <div class="header__theme">Тема...</div>
+          {/*<div class="header__theme">Тема...</div>*/}
         </ul>
       </nav>
     </header>
