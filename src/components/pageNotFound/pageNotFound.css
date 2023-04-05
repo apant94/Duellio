@@ -1,7 +1,7 @@
 .not-found {
   position: relative;
   width: 100%;
-  min-height: 80%;
+  min-height: 78%;
   background-image: url('../../images/not-found.png');
   background-repeat: no-repeat;
   background-position: center top;
@@ -9,7 +9,7 @@
 
 .not-found__link {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 44%;
   z-index: 1;
   text-decoration: none;
