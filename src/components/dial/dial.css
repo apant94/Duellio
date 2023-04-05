@@ -32,12 +32,12 @@
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-name: dial-change;
+  /*animation-name: dial-change;*/
 }
 
 .dial_status_work_dark {
   background: #99E2EA;
-  animation-name: dial-change-dark;
+  /*animation-name: dial-change-dark;*/
 }
 
 .dial__text {

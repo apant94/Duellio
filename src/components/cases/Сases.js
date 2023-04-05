@@ -3,7 +3,7 @@ import iconSearch from '../../images/search.svg';
 import iconCloseTag from '../../images/closeTag.svg';
 import iconUnwrap from '../../images/unwrap.svg';
 
-const Сases = () => {
+const Cases = () => {
   return (
     <div className='cases'>
       <h2 className='cases__title'>База кейсов для переговорных поединков</h2>
@@ -20,7 +20,7 @@ const Сases = () => {
           <p className='cases__tag-text'>Тег</p>
           <img alt="Убрать"  src={iconCloseTag} className='cases__tag-close' />
         </div>
-      <div>
+      </div>
       <div className='cases__main'>
         <div>кнопки переключения</div>
         <div className='case'> {/*отделить компонентом*/}
@@ -31,9 +31,9 @@ const Сases = () => {
             <img alt="Развернуть" src={iconUnwrap} className='case__button-icon' />
           </div>
         </div>
-      <div>
+      </div>
     </div>
   )
 }
 
-export default Сases;
+export default Cases;

@@ -11,6 +11,7 @@ import Clock from '../clock/Clock';
 import useSound from 'use-sound'; // импорт звуков
 import endingSound from '../../sounds/Jukianas_club_timer_15_sec_2.mp3';
 import PageNotFound from '../pageNotFound/PageNotFound';
+import Cases from '../cases/Сases';
 
 function App() {
 
@@ -140,7 +141,7 @@ function App() {
               changeInputStateClick={changeInputStateClick} />
           } />
           <Route path="/rules" element={<PageNotFound />} />
-          <Route path="/cases" element={<PageNotFound />} />
+          <Route path="/cases" element={<PageNotFound />} /> {/*element={<Cases />} */}
           <Route path="/about" element={<PageNotFound />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
