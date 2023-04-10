@@ -141,7 +141,7 @@ function App() {
               changeInputStateClick={changeInputStateClick} />
           } />
           <Route path="/rules" element={<PageNotFound />} />
-          <Route path="/cases" element={<PageNotFound />} /> {/*element={<Cases />} */}
+          <Route path="/cases" element={<Cases />} />
           <Route path="/about" element={<PageNotFound />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>

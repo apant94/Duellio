@@ -1,10 +1,29 @@
-@font-face { /* шрифт заголовка */
+/* @font-face { 
   font-family: 'mr_Fontick';
   src: url('mr-fontick-fontick.ttf');
   src: local('mr_Fontick'),
       url('SFUIDisplay-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+} */
+
+@font-face { /* шрифт лого */
+  font-family: 'MuseoModerno';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./MuseoModerno-Regular.woff2') format('woff2'),
+    url('./MuseoModerno-Regular.woff') format('woff'),
+    url('./MuseoModerno-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SFProText';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./SFProText-Regular.woff') format('woff'),
+    url('./SFProText-Regular.ttf') format('truetype');
 }
 
 @font-face {
