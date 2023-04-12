@@ -1,6 +1,6 @@
 .app {
   min-height: 100vh;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   background: #F5F5F6;
   animation-duration: 5s;

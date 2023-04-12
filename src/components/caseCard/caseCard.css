@@ -1,0 +1,49 @@
+.casecard {
+  background: #FFFFFF;
+  border-radius: 40px;
+  padding: 32px;
+  height: auto;
+  max-width: 524px;
+}
+
+.casecard__link {
+  text-decoration: none;
+  color: #2B2D33;
+}
+
+.casecard_hovered {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 40px;
+  padding: 32px;
+  /* height: auto; */
+  max-width: 516px;
+  border: 4px solid #22BACB;
+}
+
+.casecard__button {
+  display: none;
+}
+
+.casecard__button_hovered {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  display: flex;
+  gap: 9px;
+}
+
+.casecard__button-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  color: #2B2D33;
+  margin: 0;
+}
+
+.casecard__button-icon {
+  width: 5.5px;
+  height: 9.5px;
+  align-self: center;
+}

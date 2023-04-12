@@ -27,6 +27,15 @@
 }
 
 @font-face {
+  font-family: 'SFProText';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./SFProText-Semibold.woff') format('woff'),
+    url('./SFProText-Semibold.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'SF UI Display';
   src: url('SFUIDisplay-Regular.eot');
   src: local('SF UI Display Regular'), local('SFUIDisplay-Regular'),
