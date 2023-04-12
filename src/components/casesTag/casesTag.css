@@ -1,0 +1,19 @@
+.casestag {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 9px 19px;
+  height: fit-content;
+}
+
+.casestag__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  white-space: nowrap;
+  margin: 0;
+}

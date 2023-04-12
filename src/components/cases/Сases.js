@@ -1,7 +1,7 @@
 import './cases.css';
 import CasesList from '../casesList/CasesList';
 import iconSearch from '../../images/search.svg';
-import iconCloseTag from '../../images/closeTag.svg';
+import CasesTagsList from '../casesTagsList/CasesTagsList';
 
 const Cases = () => {
   return (
@@ -16,12 +16,7 @@ const Cases = () => {
         />
         <img alt="Поиск" src={iconSearch} className='cases__search-form-icon' />
       </form>
-      <div className='cases__search-tags'>
-        <div className='cases__tag'>  {/*отделить компонентом*/}
-          <p className='cases__tag-text'>Теги</p>
-          <img alt="Убрать"  src={iconCloseTag} className='cases__tag-close' />
-        </div>
-      </div>
+      <CasesTagsList />
       <CasesList />
     </div>
   )
