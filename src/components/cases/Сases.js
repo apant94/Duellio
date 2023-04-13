@@ -5,7 +5,7 @@ import CasesTagsList from '../casesTagsList/CasesTagsList';
 
 const Cases = () => {
   return (
-    <div className='cases'>
+    <section className='cases'>
       <h2 className='cases__title'>База кейсов для переговорных поединков</h2>
       <form className='cases__search-form'>
         <input
@@ -18,7 +18,7 @@ const Cases = () => {
       </form>
       <CasesTagsList />
       <CasesList />
-    </div>
+    </section>
   )
 }
 

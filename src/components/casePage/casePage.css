@@ -1,0 +1,41 @@
+.casepage {
+  max-width: 1200px;
+  width: 86%;
+  margin: 18px auto 100px;
+}
+
+.casepage__crumbs {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.casepage__crumbs ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  margin: 0;
+  gap: 27px;
+}
+
+.casepage__crumb {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #2B2D33;
+}
+
+.casepage__crumb a {
+  text-decoration: none;
+  color: #2B2D33;
+  position: relative;
+}
+
+.casepage__crumb a::after {
+  text-decoration: none;
+  color: #2B2D33;
+  content: url('../../images/unwrap.svg');
+  position: absolute;
+  padding: 3px 12px;
+  color: #ffffff;
+  font-size: 80%;
+}

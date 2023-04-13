@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding-top: 18px;
   width: 86%;
+  max-width: 1200px;
 }
 
 .header__title {
