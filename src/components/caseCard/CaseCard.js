@@ -8,7 +8,7 @@ const CaseCard = ({title, text}) => {
       to='/casepage' 
       className='casecard'
     >
-      <h3 className='casecard__title'>{title}</h3>
+      <h2 className='casecard__title'>{title}</h2>
       <p className='casecard__text'>{text}</p>
       <div className='casecard__button'>
         <p className='casecard__button-text'>Подробнее</p>

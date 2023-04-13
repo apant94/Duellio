@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './casePage.css';
 
-const CasePage = () => {
+const CasePage = ({title}) => {
   const navigate = useNavigate();
 
   return(
@@ -12,6 +12,15 @@ const CasePage = () => {
           <li className='casepage__crumb'>Активный начальник</li>
         </ul>
       </nav>
+      <h2 className='casepage__title'>Активный начальник</h2>
+      <div className='casepage__container'>
+        <div className='casepage__filters'>
+          
+        </div>
+        <div className='casepage__articles'>
+
+        </div>
+      </div>
     </section>
   )
 }

@@ -21,7 +21,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  color: #2B2D33;
 }
 
 .casepage__crumb a {
@@ -32,10 +31,20 @@
 
 .casepage__crumb a::after {
   text-decoration: none;
-  color: #2B2D33;
   content: url('../../images/unwrap.svg');
   position: absolute;
   padding: 3px 12px;
   color: #ffffff;
   font-size: 80%;
+}
+
+.casepage__title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.19;
+  margin: 13px 0 62px;
+}
+
+.casepage__container {
+  position: relative;
 }

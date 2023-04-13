@@ -3,6 +3,8 @@
   /* height: 100vh; */
   width: 100%;
   background: #F5F5F6;
+  color: #2B2D33;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -18,6 +20,7 @@
 
 .app_dark {
   background: #2B2D33;
+  color: #FFFFFF;
   animation-name: background-change-dark;
 }
 
