@@ -8,11 +8,13 @@ const CasesTagsList = () => {
 
   return(
     <div className='casestags'>
-        <div className='casestags__element'> 
-          <img alt="Часы" src={iconClock} className='casestags__clock-icon' />
+        <select className='casestags__element'> 
+          {/* <img alt="Часы" src={iconClock} className='casestags__clock-icon' />
           <p className='casestags__text'>4 min</p>
-          <img alt="Убрать" src={moreClock} className='casestags__more-icon' />
-        </div>
+          <img alt="Убрать" src={moreClock} className='casestags__more-icon' /> */}
+          <option className='casestags__text'>4 min</option>
+          <option className='casestags__text'>1 min</option>
+        </select>
         <CasesTag title={tags[0]} />
         <CasesTag title={tags[1]} />
         <CasesTag title={tags[2]} />

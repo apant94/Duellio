@@ -14,8 +14,21 @@
   height: 40px;
   background: #FFFFFF;
   border-radius: 28px;
+  border: 2px solid #22BACB;
   padding: 9px 19px;
-  height: fit-content;
+  cursor: pointer;
+}
+
+.casestags__element:focus {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: 2px solid #22BACB;
+  padding: 9px 19px;
 }
 
 .casestags__clock-icon {

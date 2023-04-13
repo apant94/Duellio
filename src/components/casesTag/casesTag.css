@@ -1,13 +1,12 @@
 .casestag {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
   gap: 7px;
   height: 40px;
   background: #FFFFFF;
   border-radius: 28px;
   padding: 9px 19px;
-  height: fit-content;
+  height: 22px;
+  min-width: 50px;
+  text-align: center;
 }
 
 .casestag__text {
@@ -16,4 +15,5 @@
   line-height: 1.38;
   white-space: nowrap;
   margin: 0;
+
 }
