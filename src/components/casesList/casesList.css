@@ -6,8 +6,8 @@
   flex-direction: column;
   /* max-height: 1170px;
   height: fit-content; */
-  height: 1118px;
-  gap: 24px;
+  height: 1206px;
+  gap: 24px 36px;
   /* display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: dense;

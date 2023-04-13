@@ -1,31 +1,66 @@
 .casecard {
+  position: relative;
+  text-decoration: none;
+  color: #2B2D33;
+  width: 42%;
   background: #FFFFFF;
   border-radius: 40px;
   padding: 32px;
-  height: auto;
-  max-width: 524px;
+
 }
 
-.casecard__link {
+.casecard:hover {
   text-decoration: none;
   color: #2B2D33;
+  width: 42%;
+  border: 4px solid #22BACB;
+  padding: 28px;
 }
 
-.casecard_hovered {
+.casecard__item {
+  /* background: #FFFFFF;
+  border-radius: 40px;
+  padding: 32px; */
+  /* max-width: 394px; */
+}
+
+/* .casecard_hovered {
   position: relative;
   background: #FFFFFF;
   border-radius: 40px;
   padding: 28px;
-  /* height: auto; */
-  max-width: 524px;
+  max-width: 394px;
   border: 4px solid #22BACB;
+} */
+
+.casecard__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  margin: 0 0 20px;
+}
+
+.casecard__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  margin: 0;
+}
+
+.casecard:hover .casecard__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  margin: 0 0 42px;
 }
 
 .casecard__button {
   display: none;
 }
 
-.casecard__button_hovered {
+.casecard:hover .casecard__button {
   position: absolute;
   right: 32px;
   bottom: 32px;
