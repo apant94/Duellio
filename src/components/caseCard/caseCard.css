@@ -17,22 +17,6 @@
   padding: 28px;
 }
 
-.casecard__item {
-  /* background: #FFFFFF;
-  border-radius: 40px;
-  padding: 32px; */
-  /* max-width: 394px; */
-}
-
-/* .casecard_hovered {
-  position: relative;
-  background: #FFFFFF;
-  border-radius: 40px;
-  padding: 28px;
-  max-width: 394px;
-  border: 4px solid #22BACB;
-} */
-
 .casecard__title {
   font-weight: 600;
   font-size: 24px;
