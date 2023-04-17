@@ -51,10 +51,39 @@
   position: relative;
 }
 
-.casepage__filters {
+.casepage__tags {
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  width: 14%;
+}
+
+.casepage__tag-clock {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  margin: 0;
+  padding: 0 0 0 25px;
+}
+
+.casepage__tag-clock {
+  background-image: url(../../images/clockTag.svg);
+  background-repeat: no-repeat;
+}
+
+.casepage__tag {
+  border: 2px solid #22BACB;
+  border-radius: 28px;
+  background: #FFFFFF;
+  height: 22px;
+  text-align: center;
+  padding: 9px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
 }
 
 .casepage__articles {

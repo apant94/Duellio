@@ -16,8 +16,9 @@ const CasePage = ({title}) => {
       </nav>
       <h2 className='casepage__title'>Активный начальник</h2>
       <div className='casepage__container'>
-        <div className='casepage__filters'>
-          
+        <div className='casepage__tags'>
+          <p className='casepage__tag-clock'>4 min</p>
+          <div className='casepage__tag'>Трудоустройство</div>
         </div>
         <ul className='casepage__articles'>
           <li className='casepage__article'>
