@@ -8,6 +8,10 @@
   max-width: 1200px;
 }
 
+.header__title-link {
+  text-decoration: none;
+}
+
 .header__title {
   margin: 0;
   padding: 0;
@@ -25,15 +29,12 @@
   color: #FFF;
 }
 
-.header__menu {
-  
-}
-
 .header__menu-list {
   display: flex;
   margin: 0;
   padding: 0;
   list-style: none;
+  height: 24px;
 }
 
 .header__link-item {
@@ -63,8 +64,23 @@
   color: #99E2EA;
 }
 
-.header__theme {
+.header__btn {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+}
 
+.header__btn_image_moon {
+  background-image: url('../../images/moon.svg');
+  height: 20px;
+  width: 20px;
+}
+
+.header__btn_image_sun {
+  background-image: url('../../images/sun.svg');
+  height: 24px;
+  width: 24px;
 }
 
 /* @media all and (max-width: 1400px) {

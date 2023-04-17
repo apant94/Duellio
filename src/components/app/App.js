@@ -122,7 +122,7 @@ function App() {
       onClick={() => changeInputStateClick(false)}>
       <ThemeContext.Provider value={useTheme}>
 
-        <Header />
+        <Header changeTheme={changeTheme} />
 
         <Routes>
           <Route path="/" element={
