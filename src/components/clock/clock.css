@@ -139,7 +139,7 @@
   color: #2B2D33;
 }
 
-.clock__button-mini {
+/* .clock__button-mini {
   margin: 0;
   padding: 0;
   border: 0;
@@ -209,7 +209,7 @@
   background-image: url('../../images/sun_active.svg');
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 
 @media all and (max-width: 1280px) {
   .clock {
@@ -350,7 +350,7 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
     }
     
-    .clock__button-mini {
+    /* .clock__button-mini {
       height: 60px;
       font-size: 24px;
       line-height: 29px;
@@ -400,7 +400,7 @@
     .clock__button-mini_image_sun:active {
       background-image: url('../../images/sun_active.svg');
       background-size: 27px 27px;
-    }
+    } */
   }
 }
 
