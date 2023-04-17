@@ -1,21 +1,46 @@
 .cases {
-  
+  margin: 60px auto 0;
+  max-width: 1200px;
+  width: 86%;
 }
 
 .cases__title {
-  
+  margin: 0;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
 }
 
 .cases__search-form {
-  
+  margin: 60px 0 0;
+  position: relative;
 }
 
 .cases__search-form-icon {
-
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 21px;
+  top: 23px;
 }
 
 .cases__search-form-input {
-  
+  font-family: 'SF Pro Text'; 
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  width: 675px;
+  height: 52px;
+  padding: 6px 16px 6px 48px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: none;
+}
+
+.cases__search-form-input::placeholder {
+  color: #96979C;
 }
 
 .cases__search-tags {

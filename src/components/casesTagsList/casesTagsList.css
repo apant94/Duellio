@@ -1,0 +1,50 @@
+.casestags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0 0;
+  width: 100%;
+}
+
+.casestags__element {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: 2px solid #22BACB;
+  padding: 9px 19px;
+  cursor: pointer;
+}
+
+.casestags__element:focus {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 7px;
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 28px;
+  border: 2px solid #22BACB;
+  padding: 9px 19px;
+}
+
+.casestags__clock-icon {
+  width: 18px;
+  height: 21px;
+}
+
+.casestags__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.casestags__more-icon {
+  width: 10px;
+  height: 6px;
+}

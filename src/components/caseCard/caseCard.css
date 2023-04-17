@@ -1,0 +1,68 @@
+.casecard {
+  position: relative;
+  text-decoration: none;
+  color: #2B2D33;
+  width: 41%;
+  background: #FFFFFF;
+  border-radius: 40px;
+  padding: 32px;
+
+}
+
+.casecard:hover {
+  text-decoration: none;
+  color: #2B2D33;
+  width: 41%;
+  border: 4px solid #22BACB;
+  padding: 28px;
+}
+
+.casecard__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  margin: 0 0 20px;
+}
+
+.casecard__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  margin: 0;
+}
+
+.casecard:hover .casecard__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  margin: 0 0 42px;
+}
+
+.casecard__button {
+  display: none;
+}
+
+.casecard:hover .casecard__button {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  display: flex;
+  gap: 9px;
+}
+
+.casecard__button-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
+  color: #2B2D33;
+  margin: 0;
+}
+
+.casecard__button-icon {
+  width: 5.5px;
+  height: 9.5px;
+  align-self: center;
+}
