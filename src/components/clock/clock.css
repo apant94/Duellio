@@ -139,7 +139,7 @@
   color: #2B2D33;
 }
 
-/* .clock__button-mini {
+.clock__button-mini {
   margin: 0;
   padding: 0;
   border: 0;
@@ -183,7 +183,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
 }
 
-.clock__button-mini_image_moon {
+/* .clock__button-mini_image_moon {
   background-image: url('../../images/moon.svg');
 }
 
@@ -350,7 +350,7 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
     }
     
-    /* .clock__button-mini {
+    .clock__button-mini {
       height: 60px;
       font-size: 24px;
       line-height: 29px;
@@ -374,16 +374,16 @@
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
     }
     
-    .clock__button-mini_image_moon {
+    /* .clock__button-mini_image_moon {
       background-image: url('../../images/moon.svg');
       background-size: 27px 27px;
-    }
+    } */
     
-    .clock__button-mini_image_moon:hover {
+    /* .clock__button-mini_image_moon:hover {
       box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
-    }
+    } */
     
-    .clock__button-mini_image_moon:active {
+    /* .clock__button-mini_image_moon:active {
       background-image: url('../../images/moon_active.svg');
       background-size: 27px 27px;
     }
@@ -391,13 +391,13 @@
     .clock__button-mini_image_sun {
       background-image: url('../../images/sun.svg');
       background-size: 27px 27px;
-    }
+    } */
     
-    .clock__button-mini_image_sun:hover {
+    /* .clock__button-mini_image_sun:hover {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
-    }
+    } */
     
-    .clock__button-mini_image_sun:active {
+    /* .clock__button-mini_image_sun:active {
       background-image: url('../../images/sun_active.svg');
       background-size: 27px 27px;
     } */
