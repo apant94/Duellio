@@ -31,7 +31,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
   margin: 0;
 }
 
@@ -39,7 +38,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
   margin: 0 0 42px;
 }
 
@@ -59,7 +57,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
   color: #2B2D33;
   margin: 0;
 }
