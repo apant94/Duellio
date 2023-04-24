@@ -15,5 +15,8 @@
   line-height: 1.38;
   white-space: nowrap;
   margin: 0;
+}
 
+.casestag__text_theme_dark {
+  color: #2B2D33;
 }
