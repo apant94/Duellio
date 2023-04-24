@@ -1,7 +1,10 @@
 import './casesList.css';
+import React from 'react';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import CaseCard from '../caseCard/CaseCard';
 
 const CasesList = () => {
+  const theme = React.useContext(ThemeContext);
 
   // временные переменные до готовности бэка
   const caseTitle = {
@@ -37,7 +40,7 @@ const CasesList = () => {
         <CaseCard title={caseTitle.title7} text={caseText.text7} />
         <CaseCard title={caseTitle.title8} text={caseText.text8} />
       </div>
-      <button className='caseslist__button' type='button'>Смотреть еще</button>
+      <button className={`caseslist__button ${theme === 'day' ? '' : 'caseslist__button_theme_dark'}`} type='button'>Смотреть еще</button>
     </>
   )
 };
