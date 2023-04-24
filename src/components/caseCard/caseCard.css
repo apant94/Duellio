@@ -6,7 +6,6 @@
   background: #FFFFFF;
   border-radius: 40px;
   padding: 32px;
-
 }
 
 .casecard:hover {
@@ -15,6 +14,10 @@
   width: 41%;
   border: 4px solid #22BACB;
   padding: 28px;
+}
+
+.casecard_theme_dark:hover {
+  border: 4px solid #99E2EA;
 }
 
 .casecard__title {

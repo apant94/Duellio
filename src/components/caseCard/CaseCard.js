@@ -1,12 +1,16 @@
 import './caseCard.css';
-import iconUnwrap from '../../images/unwrap.svg';
+import React from 'react';
+import { ThemeContext } from '../../contexts/ThemeContext';
 import { Link } from 'react-router-dom';
+import iconUnwrap from '../../images/unwrap.svg';
 
 const CaseCard = ({title, text}) => {
+  const theme = React.useContext(ThemeContext);
+
   return(
     <Link 
       to='/casepage' 
-      className='casecard'
+      className={`casecard ${theme === 'day' ? '' : 'casecard_theme_dark'}`}
     >
       <h2 className='casecard__title'>{title}</h2>
       <p className='casecard__text'>{text}</p>
