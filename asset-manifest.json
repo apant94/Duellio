@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Duellio/static/css/main.52ec7889.css",
-    "main.js": "/Duellio/static/js/main.255141e7.js",
+    "main.css": "/Duellio/static/css/main.7e187596.css",
+    "main.js": "/Duellio/static/js/main.681d904b.js",
     "static/js/845.6e8c004e.chunk.js": "/Duellio/static/js/845.6e8c004e.chunk.js",
     "static/js/787.dc1aad73.chunk.js": "/Duellio/static/js/787.dc1aad73.chunk.js",
     "static/media/Jukianas_club_timer_15_sec_2.mp3": "/Duellio/static/media/Jukianas_club_timer_15_sec_2.5f7216f95c82e8434012.mp3",
@@ -74,22 +74,22 @@
     "static/media/SFProText-Regular.woff": "/Duellio/static/media/SFProText-Regular.7321ae2da430c5d47dc9.woff",
     "static/media/MuseoModerno-Regular.woff2": "/Duellio/static/media/MuseoModerno-Regular.fbc4502097709f37be3b.woff2",
     "static/media/sun.svg": "/Duellio/static/media/sun.bc90b8db9a4745ab4f2f.svg",
-    "static/media/clockTag.svg": "/Duellio/static/media/clockTag.c51638c04d8a2a6da596e77b378cd693.svg",
+    "static/media/clockTag.svg": "/Duellio/static/media/clockTag.c51638c04d8a2a6da596.svg",
     "static/media/moon.svg": "/Duellio/static/media/moon.9baf17e1f708888c7da2.svg",
     "static/media/search.svg": "/Duellio/static/media/search.6ee2eb891ad5500cf357693e387c1a8a.svg",
     "static/media/closeTag.svg": "/Duellio/static/media/closeTag.abca18b35fda3ec3c8eafca7c752d50a.svg",
     "index.html": "/Duellio/index.html",
     "static/media/unwrap.svg": "/Duellio/static/media/unwrap.c4b7ca9a51d91122e2b3bbec033590c2.svg",
-    "static/media/moreTag.svg": "/Duellio/static/media/moreTag.081fec29d55dee68354fd6b03ed705b2.svg",
+    "static/media/moreTag.svg": "/Duellio/static/media/moreTag.081fec29d55dee68354f.svg",
     "static/media/casepage-back.svg": "/Duellio/static/media/casepage-back.12bc502f45ef7f65f69f.svg",
     "static/media/casepage-back-darktheme.svg": "/Duellio/static/media/casepage-back-darktheme.8f1009cd5d9c17b4b355.svg",
-    "main.52ec7889.css.map": "/Duellio/static/css/main.52ec7889.css.map",
-    "main.255141e7.js.map": "/Duellio/static/js/main.255141e7.js.map",
+    "main.7e187596.css.map": "/Duellio/static/css/main.7e187596.css.map",
+    "main.681d904b.js.map": "/Duellio/static/js/main.681d904b.js.map",
     "845.6e8c004e.chunk.js.map": "/Duellio/static/js/845.6e8c004e.chunk.js.map",
     "787.dc1aad73.chunk.js.map": "/Duellio/static/js/787.dc1aad73.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52ec7889.css",
-    "static/js/main.255141e7.js"
+    "static/css/main.7e187596.css",
+    "static/js/main.681d904b.js"
   ]
 }
