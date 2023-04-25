@@ -6,17 +6,48 @@
   width: 100%;
 }
 
+.casestags-select__container {
+  position: relative;
+  box-sizing: border-box;
+  width: 121.5px !important;
+  height: 40px !important;
+}
+
+.casestags-select__control {
+  cursor: pointer !important;
+  border: 2px solid #22BACB !important;
+  border-radius: 20px !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  transition: all 100ms;
+  background-color: #FFFFFF !important;
+  box-sizing: border-box;
+}
+
 .casestags__element {
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   gap: 7px;
+  width: 121.5px;
   height: 40px;
   background: #FFFFFF;
   border-radius: 28px;
   border: 2px solid #22BACB;
   padding: 9px 19px;
   cursor: pointer;
+  	/* спрятать стрелку дефолтную	 */
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  background-image: url(../../images/moreTag.svg);
+	background-repeat: no-repeat;
+	background-size: 10px 6px;
+	/* позиционируем фон 95% по X и 50% по Y */
+	background-position: 95% 50%;
 }
 
 .casestags__element:focus {
@@ -32,6 +63,8 @@
 }
 
 .casestags__clock-icon {
+  position: absolute;
+  z-index: 2;
   width: 18px;
   height: 21px;
 }
