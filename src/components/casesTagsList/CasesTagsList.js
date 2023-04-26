@@ -1,16 +1,16 @@
 import './casesTagsList.css';
 import React, { useState } from 'react'
 import Select from 'react-select'
-// import iconClock from '../../images/clockTag.svg';
 import CasesTag from '../casesTag/CasesTag';
 
 const CasesTagsList = () => {
   const options = [
     { value: 'classic', label: '4 min' },
     { value: 'express', label: '1 min' },
-  ];
-  const [chosenDuration, setChosenDuration] = useState('classic');
+  ]; // стейт со значениями опций тега селект 
+  const [chosenDuration, setChosenDuration] = useState('classic'); // стейт изначального значения тега селект
 
+  // Функционал подтягивания значения инпута из тега селект с установкой его первичного состояния
   const getValue = () => {
     return chosenDuration ? options.find(c => c.value === chosenDuration) : ''
   };
@@ -18,8 +18,9 @@ const CasesTagsList = () => {
   const onChange = (newValue) => {
     setChosenDuration(newValue.value);
   }
-  
-  const tags = ['Трудоустройство', 'Менеджмент', 'Семья', 'Продажи', 'Отношения', 'IT']; //список тэгов временно до появления бэка
+
+  // Список тэгов временно до появления бэка
+  const tags = ['Трудоустройство', 'Менеджмент', 'Семья', 'Продажи', 'Отношения', 'IT']; 
 
   return(
     <div className='casestags'>
@@ -30,11 +31,6 @@ const CasesTagsList = () => {
           value={getValue()} 
           options={options} 
         />
-        {/* <select className='casestags__element'> 
-          <img alt="Часы" src={iconClock} className='casestags__clock-icon' />
-          <option className='casestags__text'>4 min</option>
-          <option className='casestags__text'>1 min</option>
-        </select> */}
         <CasesTag title={tags[0]} />
         <CasesTag title={tags[1]} />
         <CasesTag title={tags[2]} />
