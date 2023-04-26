@@ -1,20 +1,36 @@
 import './casesTagsList.css';
-import iconClock from '../../images/clockTag.svg';
-import moreClock from '../../images/moreTag.svg';
+import React, { useState } from 'react'
+import Select from 'react-select'
 import CasesTag from '../casesTag/CasesTag';
 
 const CasesTagsList = () => {
-  const tags = ['Трудоустройство', 'Менеджмент', 'Семья', 'Продажи', 'Отношения', 'IT']; //список тэгов временно до появления бэка
+  const options = [
+    { value: 'classic', label: '4 min' },
+    { value: 'express', label: '1 min' },
+  ]; // стейт со значениями опций тега селект 
+  const [chosenDuration, setChosenDuration] = useState('classic'); // стейт изначального значения тега селект
+
+  // Функционал подтягивания значения инпута из тега селект с установкой его первичного состояния
+  const getValue = () => {
+    return chosenDuration ? options.find(c => c.value === chosenDuration) : ''
+  };
+
+  const onChange = (newValue) => {
+    setChosenDuration(newValue.value);
+  }
+
+  // Список тэгов временно до появления бэка
+  const tags = ['Трудоустройство', 'Менеджмент', 'Семья', 'Продажи', 'Отношения', 'IT']; 
 
   return(
     <div className='casestags'>
-        <select className='casestags__element'> 
-          {/* <img alt="Часы" src={iconClock} className='casestags__clock-icon' />
-          <p className='casestags__text'>4 min</p>
-          <img alt="Убрать" src={moreClock} className='casestags__more-icon' /> */}
-          <option className='casestags__text'>4 min</option>
-          <option className='casestags__text'>1 min</option>
-        </select>
+        <Select 
+          className="casestags-select__container"
+          classNamePrefix='casestags-select'
+          onChange={onChange} 
+          value={getValue()} 
+          options={options} 
+        />
         <CasesTag title={tags[0]} />
         <CasesTag title={tags[1]} />
         <CasesTag title={tags[2]} />
