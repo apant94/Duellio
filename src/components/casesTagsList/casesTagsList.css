@@ -115,10 +115,10 @@
 }
 
 .casestags-select__option--is-selected {
-  background-color: #FFFFFF !important;
+  background-color: transparent !important;
   position: relative;
 }
 
 .casestags-select__option--is-focused {
-  background-color: #FFFFFF !important;
+  background-color: #D6F3F7 !important;
 }
