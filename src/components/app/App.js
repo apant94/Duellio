@@ -9,6 +9,7 @@ import Footer from '../footer/Footer';
 import Clock from '../clock/Clock';
 import Cases from '../cases/Сases';
 import CasePage from '../casePage/CasePage';
+import Rules from '../rules/Rules';
 
 import useSound from 'use-sound'; // импорт звуков
 import endingSound from '../../sounds/Jukianas_club_timer_15_sec_2.mp3';
@@ -142,10 +143,9 @@ function App() {
               inputStateActive={inputState}
               changeInputStateClick={changeInputStateClick} />
           } />
-          <Route path="/rules" element={<PageNotFound />} />
+          <Route path="/rules" element={<Rules />} />
           <Route path="/cases" element={<Cases />} />
           <Route path="/casepage" element={<CasePage />} />
-          <Route path="/about" element={<PageNotFound />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
 
