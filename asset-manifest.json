@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Duellio/static/css/main.227e3349.css",
+    "main.css": "/Duellio/static/css/main.6d3c51f0.css",
     "main.js": "/Duellio/static/js/main.28357c91.js",
     "static/js/845.6e8c004e.chunk.js": "/Duellio/static/js/845.6e8c004e.chunk.js",
     "static/js/787.dc1aad73.chunk.js": "/Duellio/static/js/787.dc1aad73.chunk.js",
@@ -83,13 +83,13 @@
     "static/media/unwrap.svg": "/Duellio/static/media/unwrap.c4b7ca9a51d91122e2b3bbec033590c2.svg",
     "static/media/casepage-back.svg": "/Duellio/static/media/casepage-back.12bc502f45ef7f65f69f.svg",
     "static/media/casepage-back-darktheme.svg": "/Duellio/static/media/casepage-back-darktheme.8f1009cd5d9c17b4b355.svg",
-    "main.227e3349.css.map": "/Duellio/static/css/main.227e3349.css.map",
+    "main.6d3c51f0.css.map": "/Duellio/static/css/main.6d3c51f0.css.map",
     "main.28357c91.js.map": "/Duellio/static/js/main.28357c91.js.map",
     "845.6e8c004e.chunk.js.map": "/Duellio/static/js/845.6e8c004e.chunk.js.map",
     "787.dc1aad73.chunk.js.map": "/Duellio/static/js/787.dc1aad73.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.227e3349.css",
+    "static/css/main.6d3c51f0.css",
     "static/js/main.28357c91.js"
   ]
 }
