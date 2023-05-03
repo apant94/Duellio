@@ -46,6 +46,7 @@
   grid-area: roles;
   background: #FFFFFF;
   border-radius: 32px;
+  color: #2B2D33;
 }
 
 .rules__item_type_roles {
@@ -89,6 +90,7 @@
   grid-area: duration;
   display: flex;
   justify-content: space-between;
+  color: #2B2D33;
 }
 
 .rules__items-element {
@@ -146,6 +148,7 @@
   padding: 32px;
   position: relative;
   overflow: hidden;
+  color: #2B2D33;
 }
 
 .rules__important-title {
