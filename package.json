@@ -1,7 +1,7 @@
 {
   "name": "duellio",
   "version": "1.0.0",
-  "homepage": "https://apant94.github.io/Duellio/",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",

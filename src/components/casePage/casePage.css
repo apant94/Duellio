@@ -25,7 +25,7 @@
 
 .casepage__crumb-link {
   text-decoration: none;
-  color: #2B2D33;
+  color: #2b2d33;
   position: relative;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .casepage__crumb-link_dark {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .casepage__title {
@@ -74,13 +74,18 @@
   background-repeat: no-repeat;
 }
 
+.casepage__tag-clock_dark {
+  background-image: url(../../images/clockTag-darktheme.svg);
+}
+
 .casepage__tag {
-  border: 2px solid #22BACB;
+  border: 2px solid #22bacb;
   border-radius: 28px;
-  background: #FFFFFF;
+  background: #ffffff;
   height: 22px;
   text-align: center;
-  padding: 9px 16px;
+  padding: 9px 13px;
+  color: #2b2d33;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
@@ -97,10 +102,10 @@
 
 .casepage__article {
   list-style: none;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 40px;
   padding: 32px;
-  color: #2B2D33;
+  color: #2b2d33;
 }
 
 .casepage__article-title {
@@ -126,7 +131,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  color: #2B2D33;
+  color: #2b2d33;
   text-decoration: none;
   margin: 0 0 0 14px;
 }
@@ -140,7 +145,7 @@
 }
 
 .casepage__back-link_dark {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .casepage__back-link_dark::before {
