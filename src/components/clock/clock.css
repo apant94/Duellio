@@ -4,125 +4,116 @@
   align-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 88px auto 0;
-  padding: 0 100px;
-  width: 600px;
-  height: 693px;
-  background: #F5F5F6;
-  box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
+  margin: 88px auto 100px;
+  padding: 0 72px;
+  width: 508px;
+  height: 594px;
+  background: #eeeeef;
   border-radius: 40px;
 }
 
 .clock_dark {
-  background: #18191A;
+  background: #18191a;
 }
 
 .clock__container-date {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px 32px;
+  gap: 3px 28px;
   margin-top: 60px;
   width: 100%;
 }
 
 .clock__input {
-  outline: 0;
   margin: 0 auto;
-  border: 0;
-  padding: 12px 20px;
-  background-color: transparent;
-  max-width: 100%;
+  padding: 9px 0;
   text-align: center;
-  font-family: 'SF UI Text';
-  font-style: normal;
   font-weight: 400;
   font-size: 28px;
-  line-height: 33px;
-  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
-  color: #2B2D33;
+  line-height: 1.18;
+  background: transparent;
+  border: none;
+  max-width: 110px;
 }
 
-.clock__input::selection {
+/* .clock__input::selection {
   text-shadow: none;
-  background: #22BACB1A;
-}
+  background: #22bacb1a;
+} */
 
 .clock__input:hover {
-  outline: 1px solid #22BACB;
-  box-shadow: inset 0px 0px 2px rgba(19, 50, 78, 0.2);
-  border-radius: 16px;
   cursor: pointer;
-  background: #FFFFFF;
-}
-
-.clock__input:focus-visible {
-  outline: 1px solid #22BACB;
-  border-radius: 16px;
-  background: #FFFFFF;
+  border-bottom: 2px solid #2b2d33;
+  margin-bottom: -2px;
 }
 
 .clock__input::placeholder {
-  color: #2B2D33;
+  color: #2b2d33;
 }
 
 .clock__input_dark {
-  color: #FFF;
+  color: #fff;
 }
 
 .clock__input_dark::placeholder {
-  color: #FFF;
+  color: #fff;
 }
 
 .clock__input_dark:hover {
-  color: #2B2D33;
+  color: #2b2d33;
 }
 
 .clock__input_dark:hover::placeholder {
-  color: #2B2D33;
+  color: #2b2d33;
 }
 
 .clock__input_dark:focus-visible {
-  color: #2B2D33;
+  color: #2b2d33;
 }
 
 .clock__input_dark:focus-visible::placeholder {
-  color: #2B2D33;
+  color: #2b2d33;
 }
 
 .clock__container-button {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 36px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
   width: 100%;
 }
 
 .clock__button-main {
   margin: 0;
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 4;
   padding: 0;
   border: 0;
   width: 100%;
-  height: 60px;
-  background: #FFF;
+  height: 52px;
+  background: #fff;
   border-radius: 28px;
   cursor: pointer;
-  font-family: 'SF UI Text';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 33px;
-  color: #22BACB;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.17;
+}
+
+.clock__button-main:first-child {
+  color: #22bacb;
 }
 
 .clock__button-main:hover {
   box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
 }
 
+.clock__button-main:active {
+  box-shadow: inset 0px 1px 7px rgba(3, 32, 35, 0.25);
+}
+
 .clock__button-main_dark {
-  background: #2B2D33;
-  color: #FFF;
+  background: #2b2d33;
+  color: #fff;
 }
 
 .clock__button-main_dark:hover {
@@ -130,13 +121,13 @@
 }
 
 .clock__button-main_active {
-  background: #22BACB;
-  color: #FFF;
+  background: #22bacb;
+  color: #ffffff !important;
 }
 
 .clock__button-main_active_dark {
-  background: #99E2EA;
-  color: #2B2D33;
+  background: #99e2ea;
+  color: #2b2d33;
 }
 
 .clock__button-mini {
@@ -144,17 +135,13 @@
   padding: 0;
   border: 0;
   width: 100%;
-  height: 60px;
-  font-family: 'SF UI Text';
-  font-style: normal;
+  height: 52px;
   font-weight: 400;
   font-size: 24px;
-  line-height: 29px;
-  font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
-  color: #2B2D33;
+  line-height: 1.17;
   border-radius: 28px;
   cursor: pointer;
-  background: #FFF;
+  background: #fff;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -164,15 +151,15 @@
 }
 
 .clock__button-mini:active {
-  background: #22BACB;
+  background: #22bacb;
   box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
 }
 
 .clock__button-mini_dark {
-  background: #2B2D33;
+  background: #2b2d33;
   background-position: center;
   background-repeat: no-repeat;
-  color: #FFF;
+  color: #fff;
 }
 
 .clock__button-mini_dark:active {
@@ -305,51 +292,52 @@
     background-size: 15.21px 15.21px;
   }
 
-  @media (width: 1024px) and (height: 1366px) { /* iPad Pro 12.9 */
+  @media (width: 1024px) and (height: 1366px) {
+    /* iPad Pro 12.9 */
     .clock {
       padding: 0 100px;
       width: 600px;
       height: 693px;
       border-radius: 40px;
     }
-    
+
     .clock__container-date {
       gap: 24px 32px;
       margin-top: 60px;
     }
-    
+
     .clock__input {
       padding: 12px 20px;
       font-size: 28px;
       line-height: 33px;
       font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
     }
-    
+
     .clock__input:hover {
       box-shadow: inset 0px 0px 2px rgba(19, 50, 78, 0.2);
       border-radius: 16px;
     }
-    
+
     .clock__container-button {
       gap: 24px;
       margin-top: 36px;
     }
-    
+
     .clock__button-main {
       height: 60px;
       border-radius: 28px;
       font-size: 28px;
       line-height: 33px;
     }
-    
+
     .clock__button-main:hover {
       box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
     }
-    
+
     .clock__button-main_dark:hover {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
     }
-    
+
     .clock__button-mini {
       height: 60px;
       font-size: 24px;
@@ -357,32 +345,32 @@
       font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
       border-radius: 28px;
     }
-    
+
     .clock__button-mini:hover {
       box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
     }
-    
+
     .clock__button-mini:active {
       box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
     }
-    
+
     .clock__button-mini_dark:active {
       box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
     }
-    
+
     .clock__button-mini_dark:hover {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
     }
-    
+
     /* .clock__button-mini_image_moon {
       background-image: url('../../images/moon.svg');
       background-size: 27px 27px;
     } */
-    
+
     /* .clock__button-mini_image_moon:hover {
       box-shadow: 0px 1px 16px rgba(16, 40, 84, 0.06);
     } */
-    
+
     /* .clock__button-mini_image_moon:active {
       background-image: url('../../images/moon_active.svg');
       background-size: 27px 27px;
@@ -392,11 +380,11 @@
       background-image: url('../../images/sun.svg');
       background-size: 27px 27px;
     } */
-    
+
     /* .clock__button-mini_image_sun:hover {
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
     } */
-    
+
     /* .clock__button-mini_image_sun:active {
       background-image: url('../../images/sun_active.svg');
       background-size: 27px 27px;
@@ -422,10 +410,10 @@
     margin-top: 60px;
     width: 100%;
     grid-template-areas:
-    "inputOne"
-    "dialOne"
-    "inputTwo"
-    "dialTwo";
+      'inputOne'
+      'dialOne'
+      'inputTwo'
+      'dialTwo';
   }
 
   .clock__input {
@@ -434,9 +422,11 @@
 
   .clock__input_one {
     grid-area: inputOne;
+    border: none;
   }
 
   .clock__input_two {
     grid-area: inputTwo;
+    border: none;
   }
 }
