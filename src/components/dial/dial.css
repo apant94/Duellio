@@ -3,32 +3,32 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 240px;
-  background: #FFF;
+  height: 200px;
+  background: #fff;
   border-radius: 36px;
   cursor: pointer;
 }
 
 .dial_dark {
-  background: #2B2D33;
+  background: #2b2d33;
 }
 
 .dial_active {
-  border: 3px solid #22BACB;
+  border: 3px solid #22bacb;
   width: calc(100% - 6px);
-  height: 234px;
+  height: 194px;
 }
 
 .dial:hover .clock__dial_active {
-  border: 3px solid #F5F5F6;
+  border: 3px solid #f5f5f6;
 }
 
 .dial_active_dark {
-  border: 3px solid #F5F5F6;
+  border: 3px solid #f5f5f6;
 }
 
 .dial_status_work {
-  background: #22BACB;
+  background: #22bacb;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -36,7 +36,7 @@
 }
 
 .dial_status_work_dark {
-  background: #99E2EA;
+  background: #99e2ea;
   /*animation-name: dial-change-dark;*/
 }
 
@@ -48,140 +48,139 @@
   border: 0;
   text-align: center;
   background-color: transparent;
-  font-family: 'SF UI Display';
-  font-style: normal;
+  font-family: 'SFProDisplay';
   font-weight: 800;
-  font-size: 70px;
-  line-height: 84px;
-  font-feature-settings: 'tnum' on, 'lnum' on, 'ss03' on, 'cv02' on, 'ss02' on, 'liga' off;
-  color: #2B2D33;
+  font-size: 60px;
+  line-height: 1.2;
+  font-feature-settings: 'tnum' on, 'lnum' on, 'ss03' on, 'cv02' on, 'ss02' on,
+    'liga' off;
+  color: #2b2d33;
   cursor: pointer;
   outline: 0;
 }
 
 .dial__text::selection {
   text-shadow: none;
-  background: #22BACB1A;
+  background: #22bacb1a;
 }
 
 .dial__text:hover {
-  font-size: 67px;
-  border-bottom: 3px solid #2B2D33;
+  border-bottom: 3px solid #2b2d33;
 }
 
 .dial__text_view_dark {
-  color: #FFF;
+  color: #fff;
 }
 
 .dial__text_view_dark:hover {
-  font-size: 67px;
-  border-bottom: 3px solid #FFF;
+  border-bottom: 3px solid #fff;
 }
 
 .dial__text_status_work {
-  color: #FFF;
+  color: #fff;
 }
 
 .dial__text_status_work_dark {
-  color: #2B2D33;
+  color: #2b2d33;
 }
 
 .dial__input {
   font-size: 67px;
-  border-bottom: 3px solid #2B2D33;
+  border-bottom: 3px solid #2b2d33;
 }
 
 .dial__input_dark {
   font-size: 67px;
-  border-bottom: 3px solid #FFF;
+  border-bottom: 3px solid #fff;
 }
 
 @keyframes dial-change {
   0% {
-    background: #22BACB;
+    background: #22bacb;
   }
   10% {
-    background: #22BACB;
+    background: #22bacb;
   }
   20% {
-    background: #22BACB;
+    background: #22bacb;
   }
   30% {
     background: #454753;
   }
   40% {
-    background: #22BACB;
+    background: #22bacb;
   }
   50% {
     background: #454753;
   }
   60% {
-    background: #22BACB;
+    background: #22bacb;
   }
   70% {
     background: #454753;
   }
   80% {
-    background: #22BACB;
+    background: #22bacb;
   }
   90% {
     background: #454753;
   }
   100% {
-    background: #FFF;
+    background: #fff;
   }
 }
 
 @keyframes dial-change-dark {
   0% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
   10% {
-    background: #99E2EA;
+    background: #99e2ea;
   }
   20% {
-    background: #99E2EA;
+    background: #99e2ea;
   }
   30% {
-    background: #FFFFFF;
+    background: #ffffff;
   }
   40% {
-    background: #99E2EA;
+    background: #99e2ea;
   }
   50% {
-    background: #FFFFFF;
+    background: #ffffff;
   }
   60% {
-    background: #99E2EA;
+    background: #99e2ea;
   }
   70% {
-    background: #FFFFFF;
+    background: #ffffff;
   }
   80% {
-    background: #99E2EA;
+    background: #99e2ea;
   }
   90% {
-    background: #FFFFFF;
+    background: #ffffff;
   }
   100% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
 }
 
-@media all and (max-width: 1280px) { /* разобрать активно-пассивные*/
+@media all and (max-width: 1280px) {
+  /* разобрать активно-пассивные*/
   .dial {
     height: 174px;
     border-radius: 26px;
   }
 
   .dial_active {
-    border: 2px solid #22BACB;
+    border: 2px solid #22bacb;
     width: calc(100% - 4px);
     height: 170px;
   }
 
   .dial_active_dark {
-    border: 2px solid #F5F5F6;
+    border: 2px solid #f5f5f6;
   }
 
   .dial__text {
@@ -191,17 +190,17 @@
 
   .dial__text:hover {
     font-size: 48px;
-    border-bottom: 2px solid #2B2D33;
+    border-bottom: 2px solid #2b2d33;
   }
 
   .dial__input {
     font-size: 48px;
-    border-bottom: 2px solid #2B2D33;
+    border-bottom: 2px solid #2b2d33;
   }
-  
+
   .dial__input_dark {
     font-size: 48px;
-    border-bottom: 2px solid #FFF;
+    border-bottom: 2px solid #fff;
   }
 }
 
@@ -212,13 +211,13 @@
   }
 
   .dial_active {
-    border: 1.5544px solid #22BACB;
+    border: 1.5544px solid #22bacb;
     width: calc(100% - 1.5544px - 1.5544px);
     height: calc(136px - 1.5544px - 1.5544px);
   }
 
   .dial_active_dark {
-    border: 1.5544px solid #F5F5F6;
+    border: 1.5544px solid #f5f5f6;
   }
 
   .dial__text {
@@ -233,54 +232,55 @@
   .dial__input {
     font-size: 38px;
   }
-  
+
   .dial__input_dark {
     font-size: 38px;
   }
 
-  @media (width: 1024px) and (height: 1366px) { /* iPad Pro 12.9 */
+  @media (width: 1024px) and (height: 1366px) {
+    /* iPad Pro 12.9 */
     .dial {
       height: 240px;
       border-radius: 36px;
     }
-    
+
     .dial_active {
-      border: 3px solid #22BACB;
+      border: 3px solid #22bacb;
       width: calc(100% - 6px);
       height: 234px;
     }
-    
+
     .dial:hover .clock__dial_active {
-      border: 3px solid #F5F5F6;
+      border: 3px solid #f5f5f6;
     }
-    
+
     .dial_active_dark {
-      border: 3px solid #F5F5F6;
+      border: 3px solid #f5f5f6;
     }
-    
+
     .dial__text {
       font-size: 70px;
       line-height: 84px;
     }
-    
+
     .dial__text:hover {
       font-size: 67px;
-      border-bottom: 3px solid #2B2D33;
+      border-bottom: 3px solid #2b2d33;
     }
-    
+
     .dial__text_view_dark:hover {
       font-size: 67px;
-      border-bottom: 3px solid #FFF;
+      border-bottom: 3px solid #fff;
     }
-    
+
     .dial__input {
       font-size: 67px;
-      border-bottom: 3px solid #2B2D33;
+      border-bottom: 3px solid #2b2d33;
     }
-    
+
     .dial__input_dark {
       font-size: 67px;
-      border-bottom: 3px solid #FFF;
+      border-bottom: 3px solid #fff;
     }
   }
 

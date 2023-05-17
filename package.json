@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "prettier": "2.8.8"
   }
 }
