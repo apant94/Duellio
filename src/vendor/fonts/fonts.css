@@ -10,39 +10,28 @@
 }
 
 @font-face {
-  font-family: 'SFProText';
+  font-family: 'Onest';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./SFProText-Regular.woff') format('woff'),
-    url('./SFProText-Regular.ttf') format('truetype');
+  src: url('./Onest-Regular.woff') format('woff'),
+    url('./Onest-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'SFProText';
+  font-family: 'Onest';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-display: swap;
-  src: url('./SFProText-Semibold.woff') format('woff'),
-    url('./SFProText-Semibold.ttf') format('truetype');
+  src: url('./Onest-Medium.woff') format('woff'),
+    url('./Onest-Medium.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'SFProDisplay';
+  font-family: 'Onest';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-display: swap;
-  src: url('./SFProDisplay-Regular.woff') format('woff'),
-    url('./SFProDisplay-Regular.woff2') format('woff2'),
-    url('./SFProDisplay-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'SFProDisplay';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('./SFProDisplay-Heavy.woff') format('woff'),
-    url('./SFProDisplay-Heavy.woff2') format('woff2'),
-    url('./SFProDisplay-Heavy.ttf') format('truetype');
+  src: url('./Onest-Bold.woff') format('woff'),
+    url('./Onest-Bold.ttf') format('truetype');
 }

@@ -2,14 +2,15 @@
   min-height: 100vh;
   /* height: 100vh; */
   width: 100%;
-  background: #F5F5F6;
-  color: #2B2D33;
+  background: #f5f5f6;
+  color: #2b2d33;
+  overflow-y: hidden;
   font-feature-settings: 'ss03' on, 'cv02' on, 'cv04' on;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: background-change;
-  font-family: "SF Pro Text", "Arial", "Helvetica", sans-serif;
+  font-family: 'Onest', 'Arial', 'Helvetica', sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -19,79 +20,79 @@
 }
 
 .app_dark {
-  background: #2B2D33;
-  color: #FFFFFF;
+  background: #2b2d33;
+  color: #ffffff;
   animation-name: background-change-dark;
 }
 
 @keyframes background-change {
   0% {
-    background: #F5F5F6;
+    background: #f5f5f6;
   }
   10% {
-    background: #F5F5F6;
+    background: #f5f5f6;
   }
   20% {
-    background: #D7D9DF;
+    background: #d7d9df;
   }
   30% {
-    background: #F5F5F6;
+    background: #f5f5f6;
   }
   40% {
-    background: #D7D9DF;
+    background: #d7d9df;
   }
   50% {
-    background: #F5F5F6;
+    background: #f5f5f6;
   }
   60% {
-    background: #D7D9DF;
+    background: #d7d9df;
   }
   70% {
-    background: #F5F5F6;
+    background: #f5f5f6;
   }
   80% {
-    background: #D7D9DF;
+    background: #d7d9df;
   }
   90% {
-    background: #F5F5F6;
+    background: #f5f5f6;
   }
   100% {
-    background: #F5F5F6;
+    background: #f5f5f6;
   }
 }
 
 @keyframes background-change-dark {
   0% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
   10% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
   20% {
     background: #454753;
   }
   30% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
   40% {
     background: #454753;
   }
   50% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
   60% {
     background: #454753;
   }
   70% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
   80% {
     background: #454753;
   }
   90% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
   100% {
-    background: #2B2D33;
+    background: #2b2d33;
   }
 }

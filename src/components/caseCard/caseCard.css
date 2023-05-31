@@ -1,23 +1,37 @@
 .casecard {
   position: relative;
   text-decoration: none;
-  color: #2B2D33;
+  color: #2b2d33;
   width: 43%;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 40px;
   padding: 32px;
 }
 
+@media screen and (max-width: 376px) {
+  .casecard {
+    width: calc(100% - 20px - 20px);
+    padding: 20px;
+  }
+}
+
 .casecard:hover {
   text-decoration: none;
-  color: #2B2D33;
+  color: #2b2d33;
   width: 43%;
-  border: 4px solid #22BACB;
+  border: 4px solid #22bacb;
   padding: 28px;
 }
 
+@media screen and (max-width: 376px) {
+  .casecard:hover {
+    width: calc(100% - 20px - 20px);
+    padding: 16px;
+  }
+}
+
 .casecard_theme_dark:hover {
-  border: 4px solid #99E2EA;
+  border: 4px solid #99e2ea;
 }
 
 .casecard__title {
@@ -25,6 +39,15 @@
   font-size: 24px;
   line-height: 1.17;
   margin: 0 0 20px;
+}
+
+@media screen and (max-width: 376px) {
+  .casecard__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.17;
+    margin: 0 0 20px;
+  }
 }
 
 .casecard__text {
@@ -57,7 +80,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  color: #2B2D33;
+  color: #2b2d33;
   margin: 0;
 }
 
