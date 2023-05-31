@@ -26,7 +26,7 @@
 }
 
 .cases__search-form-input {
-  font-family: 'SF Pro Text'; 
+  font-family: 'SF Pro Text';
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
@@ -34,27 +34,29 @@
   width: 675px;
   height: 52px;
   padding: 6px 16px 6px 48px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 28px;
   border: none;
 }
 
+@media screen and (max-width: 376px) {
+  .cases__search-form-input {
+    width: calc(100% - 16px - 48px);
+  }
+}
+
 .cases__search-form-input::placeholder {
-  color: #96979C;
+  color: #96979c;
 }
 
 .cases__search-tags {
-  
 }
 
 .cases__tag {
-  
 }
 
 .cases__tag-text {
-  
 }
 
 .cases__tag-close {
-  
 }

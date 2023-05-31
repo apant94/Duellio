@@ -1,23 +1,29 @@
 .casecard {
   position: relative;
   text-decoration: none;
-  color: #2B2D33;
+  color: #2b2d33;
   width: 43%;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 40px;
   padding: 32px;
 }
 
+@media screen and (max-width: 376px) {
+  .casecard {
+    width: calc(100% - 32px - 32px);
+  }
+}
+
 .casecard:hover {
   text-decoration: none;
-  color: #2B2D33;
+  color: #2b2d33;
   width: 43%;
-  border: 4px solid #22BACB;
+  border: 4px solid #22bacb;
   padding: 28px;
 }
 
 .casecard_theme_dark:hover {
-  border: 4px solid #99E2EA;
+  border: 4px solid #99e2ea;
 }
 
 .casecard__title {
@@ -57,7 +63,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  color: #2B2D33;
+  color: #2b2d33;
   margin: 0;
 }
 

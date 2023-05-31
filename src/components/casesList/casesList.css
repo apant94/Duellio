@@ -6,12 +6,31 @@
   flex-direction: column;
   /* max-height: 1170px;
   height: fit-content; */
-  height: 1269px;
+  height: 1202px;
   gap: 24px 36px;
   /* display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: dense;
   gap: 24px; */
+}
+
+@media screen and (max-width: 376px) {
+  .caseslist {
+    height: fit-content;
+  }
+}
+
+.caseslist__image {
+  width: 48.3%;
+  height: 244px;
+  border-radius: 40px;
+}
+
+@media screen and (max-width: 376px) {
+  .caseslist__image {
+    height: 140px;
+    width: 100%;
+  }
 }
 
 .caseslist__button {
@@ -22,11 +41,11 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
-  color: #2B2D33;
+  color: #2b2d33;
   width: 100%;
   text-align: center;
 }
 
 .caseslist__button_theme_dark {
-  color: #FFFFFF;
+  color: #ffffff;
 }
