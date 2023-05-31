@@ -22,6 +22,12 @@
   padding: 28px;
 }
 
+@media screen and (max-width: 376px) {
+  .casecard:hover {
+    width: calc(100% - 32px - 32px);
+  }
+}
+
 .casecard_theme_dark:hover {
   border: 4px solid #99e2ea;
 }
