@@ -10,7 +10,8 @@
 
 @media screen and (max-width: 376px) {
   .casecard {
-    width: calc(100% - 32px - 32px);
+    width: calc(100% - 20px - 20px);
+    padding: 20px;
   }
 }
 
@@ -24,7 +25,8 @@
 
 @media screen and (max-width: 376px) {
   .casecard:hover {
-    width: calc(100% - 32px - 32px);
+    width: calc(100% - 20px - 20px);
+    padding: 16px;
   }
 }
 
@@ -37,6 +39,15 @@
   font-size: 24px;
   line-height: 1.17;
   margin: 0 0 20px;
+}
+
+@media screen and (max-width: 376px) {
+  .casecard__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.17;
+    margin: 0 0 20px;
+  }
 }
 
 .casecard__text {
