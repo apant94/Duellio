@@ -1,7 +1,9 @@
 import './casesTagsList.css';
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Select from 'react-select'
 import CasesTag from '../casesTag/CasesTag';
+
+import { newApi } from '../../utils/Api';
 
 const CasesTagsList = () => {
   const options = [
@@ -9,6 +11,19 @@ const CasesTagsList = () => {
     { value: 'express', label: '1 min' },
   ]; // стейт со значениями опций тега селект 
   const [chosenDuration, setChosenDuration] = useState('classic'); // стейт изначального значения тега селект
+
+  const [tagActiveText, setTagActiveText] = useState(""); // стейт тега
+  const [tagList, setTagList] = useState([])
+
+  useEffect(() => { // получаем tags
+    newApi.getTags()
+      .then((res) => {
+        setTagList(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   // Функционал подтягивания значения инпута из тега селект с установкой его первичного состояния
   const getValue = () => {
@@ -19,8 +34,18 @@ const CasesTagsList = () => {
     setChosenDuration(newValue.value);
   }
 
-  // Список тэгов временно до появления бэка
-  const tags = ['Трудоустройство', 'Менеджмент', 'Семья', 'Продажи', 'Отношения', 'IT']; 
+  const onClick = (e) => {
+    if(e.target.innerText !== "") {
+      setTagActiveText(e.target.innerText);
+      const intermediateList = tagList;
+      const index = intermediateList.findIndex(item => item.name === e.target.innerText);
+      const firstTag = intermediateList.splice(index, 1)
+      intermediateList.unshift(firstTag[0]);
+    }
+    else {
+      setTagActiveText("");
+    }
+  }
 
   return(
     <div className='casestags'>
@@ -31,12 +56,7 @@ const CasesTagsList = () => {
           value={getValue()} 
           options={options} 
         />
-        <CasesTag title={tags[0]} />
-        <CasesTag title={tags[1]} />
-        <CasesTag title={tags[2]} />
-        <CasesTag title={tags[3]} />
-        <CasesTag title={tags[4]} />
-        <CasesTag title={tags[5]} />
+        {tagList.map(item => <CasesTag key={item.id} title={item.name} status={tagActiveText} clickTag={onClick}/>)}
     </div>
   )
 }
