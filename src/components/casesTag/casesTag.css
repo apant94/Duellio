@@ -1,12 +1,25 @@
 .casestag {
   gap: 7px;
-  height: 40px;
   background: #FFFFFF;
   border-radius: 28px;
   padding: 9px 19px;
   height: 22px;
   min-width: 50px;
   text-align: center;
+}
+
+.casestag:hover {
+  cursor: pointer;
+  outline: 2px solid #22bacb;
+  height: 18px;
+  min-width: 46px;
+}
+
+.casestag_active {
+  display: flex;
+  outline: 2px solid #22bacb;
+  height: 18px;
+  min-width: 46px;
 }
 
 .casestag__text {
@@ -19,4 +32,10 @@
 
 .casestag__text_theme_dark {
   color: #2B2D33;
+}
+
+.casestag__icon {
+  margin-top: 4px;
+  height: 12px;
+  width: 12px;
 }
